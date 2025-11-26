@@ -1,11 +1,8 @@
-// @ts-check
 import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
+import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://allysonstauffer.github.io", // GitHub Pages root
-  base: "/portfolio/",                       // repo name
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  site: "https://allysonstauffer.github.io",
+  base: "/portfolio/",
+  integrations: [tailwind()],
 });
