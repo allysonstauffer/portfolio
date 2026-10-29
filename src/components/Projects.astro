@@ -71,11 +71,16 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                           </h3>
                         </div>
 
-                        <p
-                          class={`text-base sm:text-lg text-gray-600 leading-relaxed ${project.link ? "pr-12 sm:pr-14 md:pr-16" : ""}`}
+                        <ul
+                          class={`space-y-2 text-base sm:text-lg text-gray-600 leading-relaxed ${project.link ? "pr-12 sm:pr-14 md:pr-16" : ""}`}
                         >
-                          {project.description}
-                        </p>
+                          {project.bullets.map((bullet) => (
+                            <li class="flex items-start">
+                              <span class="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 mt-2.5 mr-3 flex-shrink-0" />
+                              <span>{bullet}</span>
+                            </li>
+                          ))}
+                        </ul>
 
                         {project.skills && project.skills.length > 0 && (
                           <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
