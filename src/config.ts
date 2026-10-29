@@ -26,6 +26,22 @@ export const siteConfig = {
   ],
   projects: [
     {
+      name: "SideQuest",
+      link: "https://github.com/allysonstauffer/sidequest",
+      bullets: [
+        "Building an early-stage social platform where hobbyists can share personal projects, discover interests and communities, and connect around what they enjoy making.",
+        "Implemented Supabase email/password authentication and a project feed where signed-in users can upload, view, and delete their own image-based posts; the profile and community-discovery experience is still evolving.",
+        "Built as an npm-workspace monorepo with a React and TypeScript frontend, FastAPI image-upload API, and Supabase Auth, PostgreSQL, and Storage.",
+      ],
+      skills: [
+        "React",
+        "TypeScript",
+        "FastAPI",
+        "Supabase",
+        "PostgreSQL",
+      ],
+    },
+    {
       name: "Cal Poly AI Factory Dashboard",
       link: "https://github.com/allysonstauffer/cal-poly-ai-factory-dashboard",
       bullets: [
