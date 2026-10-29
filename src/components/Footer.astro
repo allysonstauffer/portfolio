@@ -20,8 +20,10 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
         </p>
         <div class="flex gap-x-6">
           <a
-            href={`mailto:${siteConfig.social.email}`}
-            aria-label="Email"
+            href={`https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(siteConfig.social.email)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Email Ally in Outlook"
             class="text-gray-600 transition-colors duration-300 hover:text-[var(--accent-color)]"
             style={`--accent-color: ${siteConfig.accentColor}`}
           >
@@ -158,6 +160,12 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
               </a>
             )
           }
+          <a
+            href="#contact"
+            class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
+          >
+            Contact
+          </a>
         </nav>
         <p class="text-sm text-gray-500">
           © {new Date().getFullYear()}

@@ -156,8 +156,10 @@ import { siteConfig } from "../config";
     {
       siteConfig.social?.email && (
         <a
-          href={`mailto:${siteConfig.social.email}`}
-          aria-label="Email"
+          href={`https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(siteConfig.social.email)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Email Ally in Outlook"
           class="transition-colors duration-300 hover:text-[var(--accent-color)]"
         >
           <svg
