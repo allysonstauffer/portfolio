@@ -26,10 +26,45 @@ export const siteConfig = {
   ],
   projects: [
     {
-      name: "Sightline",
+      name: "Cal Poly AI Factory Dashboard",
+      link: "https://github.com/allysonstauffer/cal-poly-ai-factory-dashboard",
       bullets: [
-        "Built a camera-first room editor that turns 6–12 photos into an editable 2D/3D plan; Gemini handles perception while a deterministic engine applies 12 spatial principles and 5 Neufert clearances to produce 3 fit-verified layouts with a 4-state verdict for every piece.",
-        "Built a parallel recommendation pipeline across 8 retailers, ranking up to 34 listings per category by price, vibe, and parsed W×D×H; blocked unverified dimensions and rejected pieces exceeding 45% of room area or sitting within 1 ft of a wall.",
+        "Scoping a read-only NVIDIA Run:ai data pipeline and dashboard to make Cal Poly AI Factory workload activity understandable to students, faculty, visitors, and Noyce School leadership.",
+        "Defining an initial prototype around approved, aggregated workload data—including running and pending jobs, workload categories, requested and allocated GPUs, duration, and active-user trends—while documenting field meaning and availability.",
+        "Designed for public-facing activity summaries and internal capacity-planning insights, with a path to incorporate storage, GPU, and power telemetry after the initial data flow is validated.",
+      ],
+      skills: [
+        "Python",
+        "NVIDIA Run:ai",
+        "REST APIs",
+        "Data Visualization",
+        "Infrastructure Monitoring",
+      ],
+    },
+    {
+      name: "TrustFrame Lite",
+      link: "https://github.com/allysonstauffer/trustframe",
+      bullets: [
+        "Built a detector-independent Python evaluation CLI that reads per-image labels, predictions, and confidence scores from CSV and produces reproducible JSON reliability reports.",
+        "Evaluates accuracy, precision, recall, false-negative rate, expected calibration error, and confusion-matrix counts to identify unreliable or confidently wrong predictions for human review.",
+        "Defined a two-week MVP to stress-test one pretrained AI-image detector on a labeled demo dataset using JPEG quality levels 90, 70, 50, and 30, measuring prediction stability and reliability without training a new model.",
+      ],
+      skills: [
+        "Python",
+        "AI Evaluation",
+        "Machine Learning",
+        "Calibration",
+        "Image Processing",
+      ],
+    },
+    {
+      name: "Sightline",
+      link: "https://github.com/NamishM123/Code-box-hack",
+      bullets: [
+        "Built a camera-first room editor that turns 6–12 guided photos into an editable room plan; Gemini extracts room geometry while deterministic checks apply 12 spatial principles and 5 Neufert clearances to create 3 fit-verified layouts with a 4-state verdict per piece.",
+        "Built a parallel furniture recommendation pipeline across 8 retailers, ranking up to 34 listings per category by price, vibe, and parsed W×D×H; unverified dimensions are never placed, and pieces over 45% of room area or within 1 ft of a wall are rejected.",
+        "Added a 2D planner, 3D block view, and 3D rendered view that can show actual product photos at measured sizes, with generated furniture models as a fallback for images that cannot be cleanly extracted.",
+        "Implemented optional Gemini photoreal room renders using room dimensions, placement measurements, and product photos, plus localStorage persistence and shareable room plans encoded in the URL.",
       ],
       skills: [
         "Gemini",
