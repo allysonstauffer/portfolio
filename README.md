@@ -1,4 +1,4 @@
-# Ally Stauffer — Portfolio
+# Ally Stauffer's Portfolio
 
 A personal portfolio built with Astro and Tailwind CSS. The site highlights Ally's software engineering experience, selected projects, education, and technical skills.
 
