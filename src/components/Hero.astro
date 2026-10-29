@@ -4,7 +4,7 @@ import { siteConfig } from "../config";
 
 <div
   id="hero"
-  class="relative isolate overflow-hidden bg-white py-24 md:h-screen"
+  class="relative isolate overflow-hidden bg-white py-10 md:min-h-screen md:py-20"
   style={`--accent-color: ${siteConfig.accentColor}`}
 >
   <!-- Gradient overlay -->
@@ -129,29 +129,41 @@ import { siteConfig } from "../config";
       height="100%"
       stroke-width={0}></rect>
   </svg>
-  <div class="h-full mx-auto p-8 sm:p-12 md:p-24 flex items-center">
-    <div>
-      <h2
-        class="text-pretty text-xl sm:text-2xl md:text-5xl font-bold tracking-tight text-gray-700 animate-fade-in"
+  <div
+    class="relative z-10 mx-auto flex w-full max-w-7xl items-center px-6 py-2 sm:px-12 sm:py-4 md:px-24 md:py-8"
+  >
+    <div class="w-full">
+      <p
+        class="text-pretty text-sm font-semibold uppercase tracking-widest text-gray-700 animate-fade-in sm:text-base"
       >
-        Hello World!
-      </h2>
+        {siteConfig.title}
+      </p>
       <h1
-        class="mt-6 sm:mt-8 md:mt-10 text-pretty text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-200"
+        class="mt-4 text-pretty text-3xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-200 sm:text-5xl md:text-6xl lg:text-7xl"
       >
         I'm <span style={{ color: siteConfig.accentColor }}
           >{siteConfig.name}</span
         >
       </h1>
-      <p
-        class="mt-4 sm:mt-6 md:mt-8 text-pretty text-base sm:text-lg md:text-xl/8 font-medium text-gray-600 animate-fade-in animation-delay-400"
+      <h2
+        class="mt-5 max-w-5xl text-pretty text-2xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-400 sm:text-4xl md:text-5xl"
       >
-        {siteConfig.title}
+        {siteConfig.heroHeadline}
+      </h2>
+      <p class="mt-5 max-w-4xl text-pretty text-sm leading-6 text-gray-600 animate-fade-in sm:text-lg sm:leading-relaxed md:text-lg">
+        {siteConfig.heroDescription}
       </p>
+      <div class="mt-6 flex max-w-3xl flex-wrap gap-2">
+        {siteConfig.skills.map((skill) => (
+          <span class="rounded-full border border-gray-300 bg-white/80 px-3 py-1 text-sm font-medium text-gray-700">
+            {skill}
+          </span>
+        ))}
+      </div>
     </div>
   </div>
   <div
-    class="absolute bottom-0 left-0 right-0 p-8 sm:p-12 md:p-24 flex gap-x-4 sm:gap-x-6 md:gap-x-8 text-gray-700 animate-fade-in animation-delay-600"
+    class="relative z-10 mx-auto flex w-full max-w-7xl gap-x-4 px-6 pt-6 text-gray-700 animate-fade-in animation-delay-600 sm:gap-x-6 sm:px-12 md:gap-x-8 md:px-24"
   >
     {
       siteConfig.social?.email && (
@@ -209,36 +221,6 @@ import { siteConfig } from "../config";
               <path d="M12 16v-5" />
               <path d="M16 16v-3a2 2 0 1 0 -4 0" />
               <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
-            </>
-          </svg>
-        </a>
-      )
-    }
-    {
-      siteConfig.social?.twitter && (
-        <a
-          href={siteConfig.social.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Twitter"
-          class="transition-colors duration-300 hover:text-[var(--accent-color)]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
             </>
           </svg>
         </a>

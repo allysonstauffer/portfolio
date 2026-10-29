@@ -11,7 +11,7 @@ const outlookComposeUrl = `https://outlook.office.com/mail/deeplink/compose?to=$
       Let’s connect
     </h2>
     <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg">
-      Have a project, question, or just want to say hello? I’d love to hear from you.
+      {siteConfig.internshipSearch}
     </p>
     <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
       <a
@@ -35,5 +35,23 @@ const outlookComposeUrl = `https://outlook.office.com/mail/deeplink/compose?to=$
     >
       {email}
     </a>
+    <div class="mt-8 flex flex-wrap justify-center gap-6">
+      <a
+        href={siteConfig.social.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm font-semibold text-gray-200 underline underline-offset-4 transition-colors hover:text-white"
+      >
+        LinkedIn
+      </a>
+      <a
+        href={siteConfig.social.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm font-semibold text-gray-200 underline underline-offset-4 transition-colors hover:text-white"
+      >
+        GitHub
+      </a>
+    </div>
   </div>
 </section>

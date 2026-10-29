@@ -1,7 +1,9 @@
 ---
 import { siteConfig } from "../config";
 
-const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+const hasProjects =
+  siteConfig.featuredProjects.length > 0 ||
+  siteConfig.additionalProjects.length > 0;
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 ---
@@ -27,7 +29,7 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
               href="#projects"
               class="text-gray-700 hover:text-black transition-colors font-medium"
             >
-              Projects
+              Featured Work
             </a>
           </li>
         )

@@ -1,53 +1,69 @@
 ---
 import { siteConfig } from "../config";
-const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+
+const projectSections = [
+  { title: "Featured Work", projects: siteConfig.featuredProjects },
+  { title: "Additional Projects", projects: siteConfig.additionalProjects },
+].filter((section) => section.projects.length > 0);
 ---
 
 {
-  hasProjects && (
+  projectSections.length > 0 && (
     <section id="projects" class="p-8 sm:p-12 md:p-16 lg:p-24">
-      <div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          <div class="lg:col-span-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-              Projects
-            </h2>
-            <div
-              class="w-[75px] h-[5px] mt-2 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
-            />
-          </div>
+      <div class="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-4">
+          <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl xl:text-7xl">
+            Featured Work
+          </h2>
+          <div
+            class="mt-2 h-[5px] w-[75px] rounded-full"
+            style={`background-color: ${siteConfig.accentColor}`}
+          />
+          <p class="mt-6 max-w-sm text-base leading-relaxed text-gray-600 sm:text-lg">
+            Data systems, analytics, and software built for real people and real decisions.
+          </p>
+        </div>
 
-          <div class="lg:col-span-8">
-            <div class="space-y-8">
-              {siteConfig.projects.map((project, index) => {
-                const Component = project.link ? "a" : "div";
-                const linkProps = project.link
-                  ? {
-                      href: project.link,
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                    }
-                  : {};
+        <div class="lg:col-span-8">
+          {projectSections.map((section) => (
+            <div class={section.title === "Additional Projects" ? "mt-14" : ""}>
+              {section.title === "Additional Projects" && (
+                <h3 class="mb-6 text-2xl font-bold text-gray-900 sm:text-3xl">
+                  Additional Projects
+                </h3>
+              )}
+              <div class="space-y-8">
+                {section.projects.map((project, index) => {
+                  const link = "link" in project ? project.link : undefined;
+                  const outcome =
+                    "outcome" in project ? project.outcome : undefined;
+                  const Component = link ? "a" : "article";
+                  const linkProps = link
+                    ? {
+                        href: link,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      }
+                    : {};
 
-                return (
-                  <div class="group relative">
+                  return (
                     <Component
                       {...linkProps}
                       style={`--accent-color: ${siteConfig.accentColor}`}
-                      class={`block relative p-4 sm:p-6 md:p-8 bg-gray-50 rounded-xl sm:rounded-2xl border border-gray-300 shadow-sm transition-all duration-300 ${
-                        project.link
-                          ? "hover:bg-white hover:shadow-xl hover:border-[var(--accent-color)] hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-color)]"
+                      class={`group relative block rounded-xl border border-gray-300 bg-gray-50 p-4 shadow-sm transition-all duration-300 sm:rounded-2xl sm:p-6 md:p-8 ${
+                        link
+                          ? "hover:-translate-y-1 hover:border-[var(--accent-color)] hover:bg-white hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-color)]"
                           : ""
                       }`}
                     >
-                      {project.link && (
-                        <div class="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-8 md:right-8 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center bg-gray-900 rounded-full text-white transition-all duration-300 group-hover:bg-gray-700">
+                      {link && (
+                        <div class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-white transition-colors duration-300 group-hover:bg-gray-700 sm:right-6 sm:top-6">
                           <svg
-                            class="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                            class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
+                            aria-hidden="true"
                           >
                             <path
                               stroke-linecap="round"
@@ -60,37 +76,45 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                       )}
 
                       <div class="space-y-4">
-                        <div>
+                        <div class={link ? "pr-12 sm:pr-14" : ""}>
                           <span
                             class="text-sm font-mono"
                             style={{ color: siteConfig.accentColor }}
                           >
-                            0{index + 1}
+                            {String(index + 1).padStart(2, "0")}
                           </span>
-                          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mt-1">
+                          <h3 class="mt-1 text-xl font-bold text-gray-900 sm:text-2xl">
                             {project.name}
                           </h3>
+                          <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-gray-500 sm:text-sm">
+                            {project.category}
+                          </p>
                         </div>
 
-                        <ul
-                          class={`space-y-2 text-base sm:text-lg text-gray-600 leading-relaxed ${project.link ? "pr-12 sm:pr-14 md:pr-16" : ""}`}
-                        >
+                        <p class="text-base font-medium leading-relaxed text-gray-700 sm:text-lg">
+                          {project.summary}
+                        </p>
+
+                        <ul class="space-y-2 text-sm leading-relaxed text-gray-600 sm:text-base">
                           {project.bullets.map((bullet) => (
                             <li class="flex items-start">
-                              <span class="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 mt-2.5 mr-3 flex-shrink-0" />
+                              <span class="mr-3 mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gray-400" />
                               <span>{bullet}</span>
                             </li>
                           ))}
                         </ul>
 
-                        {project.skills && project.skills.length > 0 && (
-                          <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
+                        {outcome && (
+                          <p class="border-l-2 border-[var(--accent-color)] pl-4 text-sm leading-relaxed text-gray-700 sm:text-base">
+                            <span class="font-semibold">Outcome: </span>
+                            {outcome}
+                          </p>
+                        )}
+
+                        {project.skills.length > 0 && (
+                          <div class="flex flex-wrap gap-1.5 pt-1 sm:gap-2">
                             {project.skills.map((skill) => (
-                              <span
-                                class={`px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gray-900 text-white rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-300 ${
-                                  project.link ? "group-hover:bg-gray-800" : ""
-                                }`}
-                              >
+                              <span class="rounded-md bg-gray-900 px-2.5 py-1 text-xs font-medium text-white sm:rounded-lg sm:px-3 sm:py-1.5 sm:text-sm">
                                 {skill}
                               </span>
                             ))}
@@ -98,11 +122,11 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                         )}
                       </div>
                     </Component>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
