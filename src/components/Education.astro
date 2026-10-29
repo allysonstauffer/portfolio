@@ -33,22 +33,101 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
                       >
                         {edu.school}
                       </p>
+                      {edu.gpa && (
+                        <p class="mt-1 text-sm font-medium text-gray-600">
+                          GPA: {edu.gpa}
+                        </p>
+                      )}
                     </div>
                     <span class="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-0">
                       {edu.dateRange}
                     </span>
                   </div>
 
-                  <ul class="space-y-2">
-                    {edu.achievements.map((achievement) => (
-                      <li class="flex items-start">
-                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                        <span class="text-sm sm:text-base text-gray-600">
-                          {achievement}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  {edu.achievements?.length > 0 && (
+                    <ul class="space-y-2">
+                      {edu.achievements.map((achievement) => (
+                        <li class="flex items-start">
+                          <span class="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                          <span class="text-sm sm:text-base text-gray-600">
+                            {achievement}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {edu.coursework && (
+                    <div class="mt-5 border-t border-gray-100 pt-4">
+                      <h4 class="text-sm font-semibold uppercase tracking-wide text-gray-700">
+                        Relevant Coursework
+                      </h4>
+                      <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {edu.coursework.map((group) => (
+                          <div>
+                            <h5
+                              class="text-sm font-medium"
+                              style={`color: ${siteConfig.accentColor}`}
+                            >
+                              {group.category}
+                            </h5>
+                            <ul class="mt-1 space-y-1">
+                              {group.courses.map((course) => (
+                                <li class="text-sm text-gray-600">{course}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {edu.activities && (
+                    <div class="mt-5 border-t border-gray-100 pt-4">
+                      <h4 class="text-sm font-semibold uppercase tracking-wide text-gray-700">
+                        Activities
+                      </h4>
+                      <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {edu.activities.map((group) => (
+                          <div>
+                            <h5
+                              class="text-sm font-medium"
+                              style={`color: ${siteConfig.accentColor}`}
+                            >
+                              {group.category}
+                            </h5>
+                            <ul class="mt-1 space-y-1">
+                              {group.items.map((item) => (
+                                <li class="text-sm text-gray-600">{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {edu.highlights && (
+                    <div class="mt-5 border-t border-gray-100 pt-4">
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {edu.highlights.map((group) => (
+                          <div>
+                            <h4
+                              class="text-sm font-semibold uppercase tracking-wide"
+                              style={`color: ${siteConfig.accentColor}`}
+                            >
+                              {group.category}
+                            </h4>
+                            <ul class="mt-2 space-y-1">
+                              {group.items.map((item) => (
+                                <li class="text-sm text-gray-600">{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

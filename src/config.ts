@@ -139,17 +139,6 @@ export const siteConfig = {
       ],
     },
     {
-      company: "Tillys",
-      title: "Seasonal Sales Associate",
-      dateRange: "Jun 2024 – Jul 2025",
-      bullets: [
-        "Analyzed customer preferences in real time and tailored product recommendations to improve conversion and average transaction value.",
-        "Supported store revenue targets by identifying upsell and cross-sell opportunities aligned with seasonal campaigns and brand strategy.",
-        "Used POS and sales data to ensure accurate transactions, track performance, and support inventory awareness; executed merchandising and floor-set updates for product launches.",
-        "Collaborated with teammates to optimize workflows during peak traffic and deliver a consistent customer experience.",
-      ],
-    },
-    {
       company: "University of California, Davis",
       title: "COSMOS Cluster 1: Quantum Mechanics & Applications to Nanotechnology",
       dateRange: "Jul 2023 – Aug 2023",
@@ -175,9 +164,52 @@ export const siteConfig = {
       school: "California Polytechnic State University, San Luis Obispo",
       degree: "B.S. Computer Science, Minor in Mathematics",
       dateRange: "Sep 2024 – May 2028",
+      gpa: "3.64",
       achievements: [
-        "GPA: 3.64. Activities: CS+AI, Women Involved in Software & Hardware, Systems Optimization Club, Country Line Dancing Club, Cal Poly Choirs, and CRU Cal Poly.",
-        "Relevant coursework: Software Engineering (CSC 3100), Computer Security (CSC 3201), Data Science (DATA 3310), Database Management Systems (CSC 3665), Data Structures (CSC 202), Object-Oriented Programming & Design (CSC 203), Discrete Structures (CSC 248), Design & Analysis of Algorithms (CSC 349), Systems Programming (CSC 357), Enterprise Analytics (IME 212), Linear Analysis (MATH 244), and Statistical Methods for Engineers (STAT 312).",
+      ],
+      activities: [
+        {
+          category: "Computing & Technology",
+          items: ["CS+AI", "Women Involved in Software & Hardware"],
+        },
+        {
+          category: "Campus & Community",
+          items: [
+            "Systems Optimization Club",
+            "Country Line Dancing Club",
+            "Cal Poly Choirs",
+            "CRU Cal Poly",
+          ],
+        },
+      ],
+      coursework: [
+        {
+          category: "Software & Systems",
+          courses: [
+            "Software Engineering (CSC 3100)",
+            "Data Structures (CSC 202)",
+            "Object-Oriented Programming & Design (CSC 203)",
+            "Systems Programming (CSC 357)",
+          ],
+        },
+        {
+          category: "Data, Security & Databases",
+          courses: [
+            "Computer Security (CSC 3201)",
+            "Data Science (DATA 3310)",
+            "Database Management Systems (CSC 3665)",
+            "Enterprise Analytics (IME 212)",
+          ],
+        },
+        {
+          category: "Algorithms & Mathematics",
+          courses: [
+            "Discrete Structures (CSC 248)",
+            "Design & Analysis of Algorithms (CSC 349)",
+            "Linear Analysis (MATH 244)",
+            "Statistical Methods for Engineers (STAT 312)",
+          ],
+        },
       ],
     },
     {
@@ -203,10 +235,39 @@ export const siteConfig = {
       school: "College Park High School",
       degree: "High School Diploma",
       dateRange: "Aug 2020 – May 2024",
-      achievements: [
-        "Graduated in the top 3% with a 4.49 GPA; earned a Top 5% Medal, AP Scholar recognition, and California State Seal of Biliteracy in French.",
-        "Choir President and leadership head; French Club President; Link Crew Commissioner; participated in CSF and Key Club. Received 15 distinguished awards at graduation, including choir, history, French, Key Club, and CSF honors.",
-        "Relevant coursework: AP Physics C: Mechanics, AP Statistics, AP Calculus, AP World History, AP United States History, AP English Language & Composition, and AP French Language & Culture.",
+      gpa: "4.49",
+      highlights: [
+        {
+          category: "Academic Distinctions",
+          items: [
+            "Graduated in the top 3%",
+            "Top 5% Medal",
+            "AP Scholar",
+            "California State Seal of Biliteracy (French)",
+            "Received 15 distinguished awards at graduation, including choir, history, French, Key Club, and CSF honors",
+          ],
+        },
+        {
+          category: "Leadership & Activities",
+          items: [
+            "Choir President and leadership head",
+            "French Club President",
+            "Link Crew Commissioner",
+            "CSF and Key Club",
+          ],
+        },
+        {
+          category: "Relevant Coursework",
+          items: [
+            "AP Physics C: Mechanics",
+            "AP Statistics",
+            "AP Calculus",
+            "AP World History",
+            "AP United States History",
+            "AP English Language & Composition",
+            "AP French Language & Culture",
+          ],
+        },
       ],
     },
   ],
