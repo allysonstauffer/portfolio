@@ -24,7 +24,9 @@ const outlookComposeUrl = `https://outlook.office.com/mail/deeplink/compose?to=$
       </a>
     </div>
     <a
-      href={`mailto:${email}`}
+      href={outlookComposeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       class="mt-6 inline-block text-sm text-gray-300 underline underline-offset-4 transition-colors hover:text-white"
     >
       {email}
