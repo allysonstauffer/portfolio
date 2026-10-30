@@ -11,8 +11,7 @@ export const siteConfig = {
   internshipSearch:
     "Seeking Summer 2027 internships in Data Engineering, Analytics Engineering, Product Analytics, and data-focused Software Engineering, particularly in the San Francisco Bay Area.",
   availability: "Seeking Summer 2027 internships · San Francisco Bay Area",
-  // Set this only when a current, approved résumé URL is available.
-  resumeUrl: null,
+  resumeUrl: "/resume/Ally_Stauffer_Resume.pdf",
   accentColor: "#1d4ed8",
   social: {
     email: "astauf02@calpoly.edu",
