@@ -4,7 +4,7 @@ import { siteConfig } from "../config";
 
 <div
   id="hero"
-  class="relative isolate overflow-hidden bg-white py-10 md:min-h-screen md:py-20"
+  class="relative isolate overflow-hidden bg-white py-6 md:min-h-screen md:py-8"
   style={`--accent-color: ${siteConfig.accentColor}`}
 >
   <!-- Gradient overlay -->
@@ -130,7 +130,7 @@ import { siteConfig } from "../config";
       stroke-width={0}></rect>
   </svg>
   <div
-    class="relative z-10 mx-auto flex w-full max-w-7xl items-center px-6 py-2 sm:px-12 sm:py-4 md:px-24 md:py-8"
+    class="relative z-10 mx-auto flex w-full max-w-7xl items-center px-6 py-2 sm:px-12 sm:py-4 md:px-24 md:py-4"
   >
     <div class="w-full">
       <p
@@ -146,24 +146,57 @@ import { siteConfig } from "../config";
         >
       </h1>
       <h2
-        class="mt-5 max-w-5xl text-pretty text-2xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-400 sm:text-4xl md:text-5xl"
+        class="mt-4 max-w-6xl text-pretty text-2xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-400 sm:text-4xl md:text-4xl"
       >
         {siteConfig.heroHeadline}
       </h2>
-      <p class="mt-5 max-w-4xl text-pretty text-sm leading-6 text-gray-600 animate-fade-in sm:text-lg sm:leading-relaxed md:text-lg">
+      <p class="mt-4 max-w-5xl text-pretty text-sm leading-6 text-gray-600 animate-fade-in sm:text-lg sm:leading-relaxed md:text-lg">
         {siteConfig.heroDescription}
       </p>
-      <div class="mt-6 flex max-w-3xl flex-wrap gap-2">
+      <p class="mt-2 text-sm font-semibold text-gray-700 sm:text-base">
+        {siteConfig.availability}
+      </p>
+      <div class="mt-4 flex max-w-3xl flex-wrap gap-2">
         {siteConfig.skills.map((skill) => (
           <span class="rounded-full border border-gray-300 bg-white/80 px-3 py-1 text-sm font-medium text-gray-700">
             {skill}
           </span>
         ))}
       </div>
+      <div class="mt-4 flex flex-wrap items-center gap-3">
+        <a
+          href="#projects"
+          class="rounded-lg px-5 py-3 text-sm font-semibold text-white transition-colors hover:opacity-90 sm:text-base"
+          style={`background-color: ${siteConfig.accentColor}`}
+        >
+          Featured Work
+        </a>
+        {
+          siteConfig.resumeUrl ? (
+            <a
+              href={siteConfig.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-lg border border-gray-300 bg-white/80 px-5 py-3 text-sm font-semibold text-gray-800 transition-colors hover:border-gray-500 sm:text-base"
+            >
+              View Résumé
+            </a>
+          ) : (
+            <button
+              type="button"
+              disabled
+              title="A current résumé has not been added yet"
+              class="cursor-not-allowed rounded-lg border border-gray-300 bg-white/60 px-5 py-3 text-sm font-semibold text-gray-500 opacity-75 sm:text-base"
+            >
+              View Résumé <span class="font-normal">(not uploaded)</span>
+            </button>
+          )
+        }
+      </div>
     </div>
   </div>
   <div
-    class="relative z-10 mx-auto flex w-full max-w-7xl gap-x-4 px-6 pt-6 text-gray-700 animate-fade-in animation-delay-600 sm:gap-x-6 sm:px-12 md:gap-x-8 md:px-24"
+    class="relative z-10 mx-auto flex w-full max-w-7xl gap-x-5 px-6 pt-4 text-gray-700 animate-fade-in animation-delay-600 sm:gap-x-6 sm:px-12 md:gap-x-8 md:px-24"
   >
     {
       siteConfig.social?.email && (

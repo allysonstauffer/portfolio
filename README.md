@@ -24,8 +24,9 @@ Update [`src/config.ts`](./src/config.ts) to change the portfolio content and st
 
 - Personal details, page title, and accent color
 - Optional email and social links
-- About section, skills, and internship-search statement
-- Featured and additional projects, including summaries, categories, impact-focused bullets, links, and technologies
+- About section, hero skills, and internship-search statement
+- Featured and additional projects, including concise summaries, status, technical details, links, and technologies
+- Optional current résumé URL (`resumeUrl`); keep it `null` until a verified résumé is available
 - Experience entries, dates, and achievement bullets
 - Education entries, with GPA displayed separately from achievements
 - Education coursework, activities, and school highlights grouped by category

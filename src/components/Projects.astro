@@ -32,51 +32,20 @@ const projectSections = [
                   Additional Projects
                 </h3>
               )}
-              <div class="space-y-8">
+              <div class="space-y-6">
                 {section.projects.map((project, index) => {
-                  const link = "link" in project ? project.link : undefined;
-                  const outcome =
-                    "outcome" in project ? project.outcome : undefined;
-                  const Component = link ? "a" : "article";
-                  const linkProps = link
-                    ? {
-                        href: link,
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                      }
-                    : {};
+                  const hasProblemStory = "problem" in project;
+                  const hasHighlights = "highlights" in project;
+                  const hasStatus = "status" in project;
+                  const hasOfficialLink = "officialLink" in project;
 
                   return (
-                    <Component
-                      {...linkProps}
+                    <article
+                      class="rounded-xl border border-gray-300 bg-gray-50 p-4 shadow-sm transition-all duration-300 hover:border-gray-400 hover:shadow-md sm:rounded-2xl sm:p-6 md:p-7"
                       style={`--accent-color: ${siteConfig.accentColor}`}
-                      class={`group relative block rounded-xl border border-gray-300 bg-gray-50 p-4 shadow-sm transition-all duration-300 sm:rounded-2xl sm:p-6 md:p-8 ${
-                        link
-                          ? "hover:-translate-y-1 hover:border-[var(--accent-color)] hover:bg-white hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-color)]"
-                          : ""
-                      }`}
                     >
-                      {link && (
-                        <div class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-white transition-colors duration-300 group-hover:bg-gray-700 sm:right-6 sm:top-6">
-                          <svg
-                            class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M7 17L17 7M17 7H7M17 7V17"
-                            />
-                          </svg>
-                        </div>
-                      )}
-
-                      <div class="space-y-4">
-                        <div class={link ? "pr-12 sm:pr-14" : ""}>
+                      <div class="flex flex-wrap items-start justify-between gap-3">
+                        <div>
                           <span
                             class="text-sm font-mono"
                             style={{ color: siteConfig.accentColor }}
@@ -90,38 +59,101 @@ const projectSections = [
                             {project.category}
                           </p>
                         </div>
+                        {hasStatus && (
+                          <span class="rounded-full border border-gray-300 bg-white px-3 py-1 text-xs font-semibold text-gray-700">
+                            {project.status}
+                          </span>
+                        )}
+                      </div>
 
-                        <p class="text-base font-medium leading-relaxed text-gray-700 sm:text-lg">
-                          {project.summary}
+                      <p class="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg">
+                        {project.summary}
+                      </p>
+
+                      {("impact" in project || "focus" in project) && (
+                        <p class="mt-3 border-l-2 border-[var(--accent-color)] pl-4 text-sm leading-relaxed text-gray-700 sm:text-base">
+                          <span class="font-semibold">
+                            {"focus" in project ? "Focus: " : "Impact: "}
+                          </span>
+                          {"focus" in project ? project.focus : project.impact}
                         </p>
+                      )}
 
-                        <ul class="space-y-2 text-sm leading-relaxed text-gray-600 sm:text-base">
-                          {project.bullets.map((bullet) => (
-                            <li class="flex items-start">
-                              <span class="mr-3 mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gray-400" />
-                              <span>{bullet}</span>
+                      {hasHighlights && (
+                        <ul class="mt-4 flex flex-wrap gap-2">
+                          {project.highlights.map((highlight) => (
+                            <li class="rounded-md bg-white px-3 py-1.5 text-xs font-medium text-gray-700 ring-1 ring-gray-200 sm:text-sm">
+                              {highlight}
                             </li>
                           ))}
                         </ul>
+                      )}
 
-                        {outcome && (
-                          <p class="border-l-2 border-[var(--accent-color)] pl-4 text-sm leading-relaxed text-gray-700 sm:text-base">
-                            <span class="font-semibold">Outcome: </span>
-                            {outcome}
-                          </p>
-                        )}
-
-                        {project.skills.length > 0 && (
-                          <div class="flex flex-wrap gap-1.5 pt-1 sm:gap-2">
-                            {project.skills.map((skill) => (
-                              <span class="rounded-md bg-gray-900 px-2.5 py-1 text-xs font-medium text-white sm:rounded-lg sm:px-3 sm:py-1.5 sm:text-sm">
-                                {skill}
-                              </span>
-                            ))}
+                      <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+                        <details class="w-full border-t border-gray-200 pt-3">
+                          <summary class="w-fit cursor-pointer rounded-sm text-sm font-semibold text-gray-800 underline decoration-gray-400 underline-offset-4 transition-colors hover:text-[var(--accent-color)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-color)]">
+                            {hasProblemStory ? "Technical Details" : "Project Details"}
+                          </summary>
+                          <div class="mt-4 space-y-4 text-sm leading-relaxed text-gray-600 sm:text-base">
+                            {hasProblemStory && (
+                              <div class="space-y-3">
+                                <p>
+                                  <span class="font-semibold text-gray-800">Problem: </span>
+                                  {project.problem}
+                                </p>
+                                <p>
+                                  <span class="font-semibold text-gray-800">My contribution: </span>
+                                  {project.contribution}
+                                </p>
+                              </div>
+                            )}
+                            {project.details.length > 0 && (
+                              <ul class="space-y-2">
+                                {project.details.map((detail) => (
+                                  <li class="flex items-start">
+                                    <span class="mr-3 mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gray-400" />
+                                    <span>{detail}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
                           </div>
+                        </details>
+                      </div>
+
+                      {project.skills.length > 0 && (
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                          {project.skills.map((skill) => (
+                            <span class="rounded-md bg-gray-900 px-2.5 py-1 text-xs font-medium text-white">
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+                        {"link" in project && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-sm font-semibold text-gray-700 underline decoration-gray-400 underline-offset-4 transition-colors hover:text-[var(--accent-color)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-color)]"
+                          >
+                            Explore Project
+                          </a>
+                        )}
+                        {hasOfficialLink && (
+                          <a
+                            href={project.officialLink.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-sm font-semibold text-gray-700 underline decoration-gray-400 underline-offset-4 transition-colors hover:text-[var(--accent-color)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-color)]"
+                          >
+                            {project.officialLink.label}
+                          </a>
                         )}
                       </div>
-                    </Component>
+                    </article>
                   );
                 })}
               </div>

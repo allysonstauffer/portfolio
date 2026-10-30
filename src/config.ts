@@ -10,6 +10,9 @@ export const siteConfig = {
     "I'm a Computer Science student at Cal Poly focused on data engineering, analytics, and AI-powered products. I built production reporting pipelines at Kestrix in London and now develop infrastructure analytics for Cal Poly's $3M NVIDIA-powered AI Factory.",
   internshipSearch:
     "Seeking Summer 2027 internships in Data Engineering, Analytics Engineering, Product Analytics, and data-focused Software Engineering, particularly in the San Francisco Bay Area.",
+  availability: "Seeking Summer 2027 internships · San Francisco Bay Area",
+  // Set this only when a current, approved résumé URL is available.
+  resumeUrl: null,
   accentColor: "#1d4ed8",
   social: {
     email: "astauf02@calpoly.edu",
@@ -32,30 +35,57 @@ export const siteConfig = {
       name: "Kestrix — Production Data Validation & Reporting",
       category:
         "Professional experience · Software Engineering Intern · London · Jun–Aug 2026",
+      status: "Completed production work",
       summary:
-        "Drone-imagery validation signals were distributed across systems; I consolidated them into hourly, property-level reporting for operations.",
-      bullets: [
-        "Built Python scoring and remediation logic for image completeness, image quality, and reconstruction status, then connected it with BigQuery SQL, Dataform, and Looker Studio.",
-        "Investigated data across 7 PostgreSQL and BigQuery entities and wrote 47 pytest cases across 11 fixtures.",
+        "Built and shipped a Python → BigQuery SQL → Dataform → Looker Studio pipeline that turned fragmented drone-imagery validation data into hourly, property-level operational reporting.",
+      problem:
+        "Validation signals were spread across databases and processing stages, making it difficult for operators to find incomplete imagery and determine what needed to be recollected.",
+      contribution:
+        "Built scoring and remediation logic, automated hourly reporting, and shipped an operations dashboard.",
+      impact:
+        "Operators could identify incomplete coverage, investigate failed properties, and prioritize re-uploads or reflights without tracing fragmented engineering data manually.",
+      highlights: [
+        "Hourly production reporting",
+        "47 tests · 11 fixtures",
+        "7 PostgreSQL/BigQuery entities",
       ],
-      outcome:
-        "Shipped a filterable, exportable operations dashboard to help Drone Operations identify incomplete coverage and prioritize follow-up.",
+      details: [
+        "Evaluated RGB and thermal imagery completeness, coverage, quality, and reconstruction status, applying a 99% image-completeness threshold.",
+        "Developed Python scoring and remediation logic and implemented the production reporting flow with BigQuery SQL and Dataform.",
+        "Wrote 47 pytest cases across 11 fixtures and investigated validation data across 7 PostgreSQL/BigQuery entities.",
+        "Built SQLAlchemy/Folium geospatial visualizations and shipped a filterable, exportable Looker Studio dashboard for Drone Operations.",
+        "The work enabled faster identification and prioritization; no quantified reduction in investigation time is claimed.",
+      ],
       skills: ["Python", "BigQuery SQL", "Dataform", "Looker Studio", "pytest"],
     },
     {
       name: "Cal Poly NVIDIA AI Factory — Infrastructure Analytics",
-      category: "Cal Poly Noyce · Ongoing development",
+      category: "Cal Poly Noyce · Primary student Software Engineer",
+      status: "In Development",
       summary:
-        "Developing infrastructure analytics for Cal Poly's $3M NVIDIA-powered AI Factory, which uses four NVIDIA DGX B200 systems.",
-      bullets: [
-        "Selected as the primary student developer for infrastructure monitoring and data visualization.",
-        "Developing Python telemetry pipelines and dashboards for workload activity, GPU allocation, utilization, and capacity planning; not all planned features are deployed.",
-        "Scoping a read-only NVIDIA Run:ai data pipeline around approved, aggregated workload data, including running and pending jobs, workload categories, requested and allocated GPUs, duration, and active-user trends.",
-        "Documenting field meaning and availability before validating the initial data flow; storage, GPU, and power telemetry are possible later additions.",
-        "Working with Noyce leadership and infrastructure staff to make complex engineering data useful to students, faculty, and infrastructure planning.",
+        "Selected as the primary student Software Engineer developing infrastructure monitoring and data visualization for Cal Poly's $3M NVIDIA-powered AI Factory, which uses four NVIDIA DGX B200 systems.",
+      problem:
+        "Students, faculty, and infrastructure stakeholders need clear, reliable information about AI Factory workload activity and resource use.",
+      contribution:
+        "Designing Python telemetry pipelines and stakeholder-facing dashboards using read-only NVIDIA Run APIs and approved, aggregated workload data.",
+      focus:
+        "Developing infrastructure analytics to give stakeholders clearer visibility into GPU workloads, resource utilization, and capacity planning.",
+      highlights: [
+        "$3M AI Factory",
+        "4 NVIDIA DGX B200 systems",
+        "Primary student engineer",
       ],
-      outcome: "Ongoing development; this work is not presented as a fully deployed platform.",
+      details: [
+        "Designing telemetry for workload activity, running and pending jobs, requested and allocated GPU resources, utilization, and capacity metrics.",
+        "Scoping the data flow as read-only and limited to approved, aggregated workload data.",
+        "Collaborating with Noyce leadership and infrastructure staff to make technical data useful to stakeholders.",
+        "Storage, GPU, and power telemetry are possible future expansions, subject to validation and approval.",
+      ],
       link: "https://github.com/allysonstauffer/cal-poly-ai-factory-dashboard",
+      officialLink: {
+        label: "Official Cal Poly Announcement",
+        url: "https://ucm.calpoly.edu/news/cal-poly-open-advanced-ai-factory-nvidia-technology",
+      },
       skills: [
         "Python",
         "NVIDIA Run:ai",
@@ -67,45 +97,77 @@ export const siteConfig = {
     {
       name: "TrustFrame — AI Model Evaluation",
       category: "Next-Gen Innovators via Cal Poly · Evaluation CLI built",
+      status: "Evaluation framework built · stress testing planned",
       summary:
-        "A detector-independent evaluation tool makes it easier to inspect AI-image-detector reliability beyond a single accuracy score.",
-      bullets: [
-        "Built a Python CLI that reads per-image labels, predictions, and confidence scores from CSV and produces reproducible JSON reliability reports.",
-        "Reports accuracy, precision, recall, false-negative rate, confusion-matrix counts, and 10-bin expected calibration error.",
-        "JPEG-compression stress testing is a planned next step, not a completed evaluation.",
+        "Built a detector-agnostic Python CLI that evaluates image-detector predictions and produces reproducible JSON reliability reports.",
+      problem:
+        "A single accuracy score can obscure calibration issues and confidently incorrect predictions in AI-image detectors.",
+      contribution:
+        "Created a CSV-in, JSON-out evaluation workflow covering classification and calibration metrics.",
+      impact:
+        "The reports help identify unreliable or confidently incorrect predictions for human review.",
+      highlights: [
+        "Python AI evaluation framework",
+        "10-bin expected calibration error",
+        "Reproducible JSON reports",
       ],
-      outcome:
-        "Created a reusable evaluation workflow for identifying unreliable or confidently wrong predictions for human review.",
+      details: [
+        "Accepts per-image labels, predictions, and confidence scores from CSV through a command-line workflow.",
+        "Reports accuracy, precision, recall, false-negative rate, confusion matrices, and expected calibration error.",
+        "Planned JPEG-compression stress tests will compare quality levels 90, 70, 50, and 30; those experiments have not yet produced results.",
+      ],
       link: "https://github.com/allysonstauffer/trustframe",
       skills: ["Python", "AI Evaluation", "Calibration", "Machine Learning"],
     },
     {
       name: "Mustang Maps — Production Geospatial Navigation",
       category: "Professional experience · CodeBox team project",
+      status: "Production application · Team project",
       summary:
-        "Contributed navigation and classroom wayfinding features to a production campus app as part of an eight-person team.",
-      bullets: [
-        "Contributed to A*-based routing over a GeoJSON walking graph of approximately 5.7K nodes and 6.3K edges; the routing system was a team effort.",
-        "Shipped a MapLibre class-zones layer covering 92 floor-plan zones across 45 buildings and 4,271 classrooms.",
+        "Contributed navigation and classroom wayfinding features to a production React Native campus app built by an eight-person team.",
+      problem:
+        "Students need practical walking directions and precise classroom wayfinding across a large campus.",
+      contribution:
+        "Contributed to navigation workflows and shipped a MapLibre classroom-zones layer; the routing system was a collaborative team effort.",
+      impact:
+        "The production app has 161+ downloads and classroom-zone coverage spanning 4,271 classrooms.",
+      highlights: [
+        "161+ downloads",
+        "5.7K nodes · 6.3K edges",
+        "4,271 classrooms",
       ],
-      outcome:
-        "The production React Native app has 161+ downloads; contributions included classroom-zone wayfinding and navigation-mode features.",
+      details: [
+        "Contributed to A*-based navigation over a GeoJSON walking graph with approximately 5.7K nodes, 6.3K edges, 98 km of paths, and 400+ campus buildings.",
+        "Shipped a MapLibre class-zones interface covering 92 floor-plan zones across 45 buildings and 4,271 classrooms.",
+        "Implemented GO/Exit navigation-mode behavior for turn-by-turn workflows and contributed through collaborative Git development and code review.",
+        "These are individual contributions within an eight-person team; I did not build the entire application or routing system.",
+      ],
       skills: ["React Native", "TypeScript", "MapLibre", "GeoJSON", "A* routing"],
     },
     {
       name: "Inner View — AI-Powered Interview Platform",
       category: "Hackathon · Product and engineering",
+      status: "Hackathon project",
       summary:
-        "A voice-driven interview practice app adapts follow-up questions to the role and turns interview responses into structured feedback.",
-      bullets: [
-        "Built with Next.js, TypeScript, the OpenAI API, and Web Speech API, with adaptive follow-up questions and structured post-interview feedback.",
-        "Implemented server-side API routes and context-conditioned interviewer agents that generate structured scripts and follow-up questions from the role and interview transcript.",
-        "Created a local-first architecture with React Context, versioned localStorage, and Zod-validated schemas and migrations.",
-        "Developed a post-interview evaluation pipeline that converts transcripts into structured signals and timeline-based insights.",
-        "Led product direction for a six-person hackathon team and presented the project to 150+ attendees.",
+        "A voice-driven interview product adapts follow-up questions to the role and turns responses into structured feedback.",
+      problem:
+        "Interview practice is more useful when questions respond to the conversation and feedback helps candidates understand performance.",
+      contribution:
+        "Led product direction and built adaptive interview and evaluation flows with a six-person team.",
+      impact:
+        "Presented the working product to 150+ attendees, connecting engineering decisions to a user-facing interview experience.",
+      highlights: [
+        "AI-powered interview platform",
+        "6-person team",
+        "Presented to 150+ attendees",
       ],
-      outcome:
-        "Connected a voice-driven interview flow with adaptive questions and structured post-interview insights.",
+      details: [
+        "Built with Next.js, TypeScript, OpenAI API, and Web Speech API, including adaptive follow-up questions.",
+        "Implemented server-side API routes and context-conditioned interviewer agents that generate scripts and follow-ups from role and transcript context.",
+        "Used React Context, versioned localStorage, and Zod-validated schemas and migrations for local-first state management.",
+        "Developed structured qualitative and quantitative post-interview feedback from transcript signals.",
+        "Led product direction for the six-person hackathon team and presented the project to 150+ attendees.",
+      ],
       link: "https://github.com/zen-watts/interview-ai",
       skills: [
         "Next.js",
@@ -119,12 +181,34 @@ export const siteConfig = {
   ],
   additionalProjects: [
     {
+      name: "LociLens — Full-Stack Field Documentation",
+      category: "Personal project",
+      status: "In Development",
+      summary:
+        "Building a field-documentation platform for architecture, engineering, and construction teams, with offline mobile capture, structured photo metadata, and project organization.",
+      details: [
+        "Designing offline queueing and retry for field capture.",
+        "Organizing multi-attribute photo metadata with bulk tagging and metadata audit history.",
+        "Building a React/Express/PostgreSQL backend with role-based access control.",
+        "Supporting ZIP and CSV project exports.",
+      ],
+      skills: [
+        "React Native",
+        "Expo",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+      ],
+    },
+    {
       name: "SideQuest",
       category: "Personal project · In progress",
       summary:
         "An early-stage social platform for sharing personal projects and discovering communities around creative interests.",
       link: "https://github.com/allysonstauffer/sidequest",
-      bullets: [
+      details: [
         "Building an early-stage social platform where hobbyists can share personal projects, discover interests and communities, and connect around what they enjoy making.",
         "Implemented Supabase email/password authentication and a project feed where signed-in users can upload, view, and delete their own image-based posts; the profile and community-discovery experience is still evolving.",
         "Built as an npm-workspace monorepo with a React and TypeScript frontend, FastAPI image-upload API, and Supabase Auth, PostgreSQL, and Storage.",
@@ -143,7 +227,7 @@ export const siteConfig = {
       summary:
         "A camera-first room editor combines image-based room modeling with fit-checked furniture recommendations.",
       link: "https://github.com/NamishM123/Code-box-hack",
-      bullets: [
+      details: [
         "Built a camera-first room editor that turns 6–12 guided photos into an editable room plan; Gemini extracts room geometry while deterministic checks apply 12 spatial principles and 5 Neufert clearances to create 3 fit-verified layouts with a 4-state verdict per piece.",
         "Built a parallel furniture recommendation pipeline across 8 retailers, ranking up to 34 listings per category by price, vibe, and parsed W×D×H; unverified dimensions are never placed, and pieces over 45% of room area or within 1 ft of a wall are rejected.",
         "Added a 2D planner, 3D block view, and 3D rendered view that can show actual product photos at measured sizes, with generated furniture models as a fallback for images that cannot be cleanly extracted.",
@@ -174,10 +258,9 @@ export const siteConfig = {
       title: "Software Engineering Intern",
       dateRange: "Jun 2026 – Aug 2026",
       bullets: [
-        "Built a Python → BigQuery SQL → Dataform → Looker Studio scoring pipeline that consolidated distributed drone-imagery validation signals into hourly, property-level reporting.",
-        "Wrote 47 pytest cases across 11 fixtures to validate property scoring, no-action/re-upload/reflight remediation, and environment loading, then mirrored the verified scoring logic in BigQuery SQL.",
-        "Investigated validation signals across 7 PostgreSQL and BigQuery entities and built SQLAlchemy/Folium visualizations comparing planned and collected drone imagery to identify properties needing recapture.",
-        "Shipped a filterable, exportable Looker Studio dashboard so Drone Operations could identify incomplete coverage and prioritize follow-up.",
+        "Translated drone-imagery validation workflows into Python scoring and remediation rules and owned delivery of the production reporting pipeline.",
+        "Coordinated data investigation across 7 PostgreSQL and BigQuery entities and validated scoring with 47 pytest cases across 11 fixtures.",
+        "Partnered with Drone Operations to turn the reporting into a filterable, exportable dashboard for property follow-up and operational prioritization.",
       ],
     },
     {
@@ -188,15 +271,6 @@ export const siteConfig = {
         "Lead cross-platform communications and a student marketing team across LinkedIn, Instagram, Facebook, and university channels, building structured content, asset-management, and project workflows while managing and mentoring team members.",
         "Drive promotion and coverage of AI events, distinguished speakers, hackathons, research, and student programs; an incoming-student outreach campaign generated 500+ new Instagram followers.",
         "Selected as one of two student speakers to address 400+ incoming freshmen and transfer students, representing Noyce and advising on computing, research, academics, and campus opportunities.",
-      ],
-    },
-    {
-      company: "Cal Poly Noyce School of Applied Computing",
-      title: "Social Media Student Assistant",
-      dateRange: "Apr 2025 – Feb 2026",
-      bullets: [
-        "Produced digital storytelling and event coverage across Instagram, LinkedIn, and Noyce web channels to highlight faculty research, student achievements, and computing initiatives.",
-        "Collaborated with Noyce leadership and university partners on speaker series, fundraising campaigns, event promotion, photography, and community engagement before promotion to Student Communications Lead.",
       ],
     },
     {
@@ -224,7 +298,7 @@ export const siteConfig = {
       title: "Undergraduate Research Assistant",
       dateRange: "Sep 2024 – Jun 2026",
       bullets: [
-        "Analyzed student interactions in a CSC 101 study comparing AI-labeled and human-labeled tutors to understand how labeling influences trust, communication, and problem-solving.",
+        "Conducted nearly two years of undergraduate HCI research, analyzing a CSC 101 study comparing AI-labeled and human-labeled tutors and how labeling influences trust, communication, and problem-solving.",
         "Built a TypeScript, JavaScript, and React study interface with controlled task flows to support reliable participant data collection.",
         "Reviewed research on social media engagement and preference elicitation to inform research questions and experimental design; designed and ran an online study on reactions to subtly altered Instagram feed ratings and later reflection.",
       ],
@@ -240,31 +314,21 @@ export const siteConfig = {
       ],
     },
     {
-      company: "University of California, Davis",
-      title: "COSMOS Cluster 1: Quantum Mechanics & Applications to Nanotechnology",
-      dateRange: "Jul 2023 – Aug 2023",
+      company: "Cal Poly Noyce School of Applied Computing",
+      title: "Social Media Student Assistant",
+      dateRange: "Apr 2025 – Feb 2026",
       bullets: [
-        "Applied C to simulate Schrödinger’s equation and model tunneling, wavefunction spread, and quantum state transfer foundational to nanotechnology.",
-        "Built electronics and instrumentation—including cables, LEDs, op-amps, and Arduino-based systems—to measure electromagnetic pulse propagation and LED band-gap energy.",
-        "Collaboratively constructed and operated scanning tunneling microscopes to image atomic surfaces, gaining hands-on experience in quantum tunneling and nanoscale imaging.",
-      ],
-    },
-    {
-      company: "Girls Who Code",
-      title: "Summer Immersion & Self-Paced Programs",
-      dateRange: "Jun 2022 – Aug 2023",
-      bullets: [
-        "Completed the Summer Immersion Program (2022), Fall Self-Paced Program (2022), and Summer Self-Paced Program (2023), expanding a collaborative code-debugging platform using HTML, CSS, JavaScript, and Python.",
-        "Completed courses in cybersecurity, cryptography, and data science while contributing solutions to user communities of 500+ members.",
-        "Created projects including a personal website, personality quizzes, and a mental-health toolkit activist webpage.",
+        "Produced digital storytelling and event coverage across Instagram, LinkedIn, and Noyce web channels to highlight faculty research, student achievements, and computing initiatives.",
+        "Collaborated with Noyce leadership and university partners on speaker series, fundraising campaigns, event promotion, photography, and community engagement before promotion to Student Communications Lead.",
       ],
     },
   ],
   education: [
     {
       school: "California Polytechnic State University, San Luis Obispo",
-      degree: "B.S. Computer Science, Minor in Mathematics",
-      dateRange: "Sep 2024 – May 2028",
+      degree: "Bachelor of Science in Computer Science",
+      minor: "Minor in Mathematics",
+      dateRange: "Expected Graduation: May 2028",
       isPrimary: true,
       gpa: "3.64",
       activities: [
@@ -315,64 +379,89 @@ export const siteConfig = {
     {
       school: "University of California, Davis",
       degree:
-        "COSMOS Certificate, Quantum Mechanics & Applications to Nanotechnology",
-      dateRange: "Jul 2023 – Aug 2023",
+        "COSMOS Cluster 1: Quantum Mechanics & Applications to Nanotechnology",
+      dateRange: "Summer 2023",
       isPrimary: false,
       achievements: [
-        "Selected through a ~10% acceptance-rate process for Cluster One; completed coursework in Computations of Quantum Phenomena and Quantum Physics Experiments and Applications to Nanotechnology.",
-        "Collaborated with students across California on research and projects, including a presentation on scanning tunneling microscopy; worked with UC Davis department heads and PhD and master’s students.",
+        "Selected for an intensive computational physics and nanotechnology program, applying C programming to quantum simulations and gaining hands-on experience with experimental electronics and scanning tunneling microscopy.",
       ],
-    },
-    {
-      school: "Girls Who Code",
-      degree:
-        "Summer Immersion Program (2022), Fall Self-Paced Program (2022), Summer Self-Paced Program (2023), Computer Science",
-      dateRange: "Jun 2022 – Aug 2023",
-      isPrimary: false,
-      achievements: [
-        "Grades 10–12; completed coursework in Python, cybersecurity, cryptography, and data science.",
-        "Developed websites including a personal site, personality quizzes, and a mental-health advocacy toolkit.",
-      ],
-    },
-    {
-      school: "College Park High School",
-      degree: "High School Diploma",
-      dateRange: "Aug 2020 – May 2024",
-      isPrimary: false,
-      gpa: "4.49",
-      highlights: [
+      coursework: [
         {
-          category: "Academic Distinctions",
-          items: [
-            "Graduated in the top 3%",
-            "Top 5% Medal",
-            "AP Scholar",
-            "California State Seal of Biliteracy (French)",
-            "Received 15 distinguished awards at graduation, including choir, history, French, Key Club, and CSF honors",
-          ],
-        },
-        {
-          category: "Leadership & Activities",
-          items: [
-            "Choir President and leadership head",
-            "French Club President",
-            "Link Crew Commissioner",
-            "CSF and Key Club",
-          ],
-        },
-        {
-          category: "Relevant Coursework",
-          items: [
-            "AP Physics C: Mechanics",
-            "AP Statistics",
-            "AP Calculus",
-            "AP World History",
-            "AP United States History",
-            "AP English Language & Composition",
-            "AP French Language & Culture",
+          category: "Coursework",
+          courses: [
+            "Computations of Quantum Phenomena",
+            "Quantum Physics Experiments & Applications to Nanotechnology",
           ],
         },
       ],
     },
   ],
+  honorsAndLeadership: {
+    featured: [
+      {
+        title: "Dean's List — 5× Recipient",
+        organization: "Cal Poly College of Engineering",
+        description:
+          "Recognized for academic achievement across five academic terms.",
+      },
+      {
+        title: "Social Science Department Medallion",
+        organization: "College Park High School · 2024",
+        description:
+          "Selected as the sole recipient from a graduating class of 450+ students for excellence in history and social sciences.",
+      },
+      {
+        title: "Choir Medallion",
+        organization: "College Park High School · 2024",
+        description:
+          "Selected as the sole recipient among 24 senior choir students for excellence in singing and music theory.",
+      },
+      {
+        title: "California State Seal of Biliteracy — French",
+        organization: "2024",
+        description:
+          "Recognized for proficiency in reading, writing, and speaking French following five years of language study.",
+      },
+    ],
+    additional: [
+      {
+        title: "Chamber Singers MVP Award — 2024",
+        description:
+          "Recognized for exceptional contribution and leadership within the choir ensemble.",
+      },
+      {
+        title: "Choir President — College Park High School",
+        description:
+          "Led weekly officer meetings, coordinated events, delegated responsibilities, and assisted with rehearsals and warm-ups.",
+      },
+      {
+        title: "Director's Award — 2024",
+        description: "Recognized for four years of dedication to choral music.",
+      },
+      {
+        title: "MDUSD Creative Arts Honor Roll — 2024",
+        description:
+          "Completed four consecutive years of choir while maintaining a 4.0 GPA in vocal music.",
+      },
+      {
+        title: "AP Scholar — 2023",
+        description:
+          "Recognized by the College Board for performance on Advanced Placement examinations.",
+      },
+      {
+        title: "Girl Scout Bronze Award — 2017",
+        description:
+          "Completed a collaborative community Take Action project involving more than 20 hours of planning and service.",
+      },
+      {
+        title: "Girls Who Code — Early Computing Programs, 2022–2023",
+        description:
+          "Completed Summer Immersion and Self-Paced programs in programming, cybersecurity, cryptography, and data science. Developed projects using HTML, CSS, JavaScript, and Python.",
+      },
+      {
+        title: "College Park High School — Academic Recognition",
+        description: "Graduated in the top 3% of the class with a 4.49 GPA.",
+      },
+    ],
+  },
 };

@@ -15,18 +15,12 @@ const outlookComposeUrl = `https://outlook.office.com/mail/deeplink/compose?to=$
     </p>
     <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
       <a
-        href={`mailto:${email}`}
-        class="rounded-lg bg-white px-6 py-3 font-semibold text-gray-900 transition-colors hover:bg-gray-200"
-      >
-        Email me
-      </a>
-      <a
         href={outlookComposeUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="rounded-lg border border-gray-500 px-6 py-3 font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
+        class="rounded-lg bg-white px-6 py-3 font-semibold text-gray-900 transition-colors hover:bg-gray-200"
       >
-        Open in Outlook
+        Email me
       </a>
     </div>
     <a

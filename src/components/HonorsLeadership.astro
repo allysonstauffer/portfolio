@@ -1,0 +1,73 @@
+---
+import { siteConfig } from "../config";
+const { featured, additional } = siteConfig.honorsAndLeadership;
+---
+
+<section id="honors-leadership" class="p-8 sm:p-12 md:p-16 lg:p-24">
+  <div class="grid grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-16">
+    <div class="lg:col-span-4">
+      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
+        Honors &amp; Leadership
+      </h2>
+      <div
+        class="mt-2 h-[5px] w-[75px] rounded-full"
+        style={`background-color: ${siteConfig.accentColor}`}
+      />
+      <p class="mt-4 text-sm leading-relaxed text-gray-600 sm:text-base">
+        Recognition and leadership experiences that shaped how I approach
+        learning, teamwork, and communication.
+      </p>
+    </div>
+
+    <div class="space-y-5 lg:col-span-8">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {featured.map((award) => (
+          <article class="rounded-lg border border-gray-300 bg-white p-4 shadow-sm">
+            <h3 class="font-semibold text-gray-900">{award.title}</h3>
+            <p
+              class="mt-1 text-sm font-medium"
+              style={`color: ${siteConfig.accentColor}`}
+            >
+              {award.organization}
+            </p>
+            <p class="mt-2 text-sm leading-relaxed text-gray-600">
+              {award.description}
+            </p>
+          </article>
+        ))}
+      </div>
+
+      <details
+        class="group rounded-lg border border-gray-300 bg-white p-4 shadow-sm"
+        style={`--accent-color: ${siteConfig.accentColor}`}
+      >
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 rounded-sm font-semibold text-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-color)]">
+          Additional Honors &amp; Earlier Leadership
+          <svg
+            aria-hidden="true"
+            class="h-4 w-4 flex-shrink-0 text-gray-500 transition-transform group-open:rotate-45"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M8 3v10M3 8h10"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </summary>
+        <ul class="mt-4 grid grid-cols-1 gap-x-6 gap-y-4 border-t border-gray-100 pt-4 sm:grid-cols-2">
+          {additional.map((item) => (
+            <li>
+              <h3 class="text-sm font-semibold text-gray-800">{item.title}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-gray-600">
+                {item.description}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
