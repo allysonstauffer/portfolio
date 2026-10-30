@@ -10,6 +10,34 @@ html.dark {
   color-scheme: dark;
 }
 
+html.dark [style*="--accent-color: #1d4ed8"] {
+  --accent-color: #93c5fd !important;
+}
+
+html.dark [style^="color: #1d4ed8"],
+html.dark [style^="color:#1d4ed8"] {
+  color: #93c5fd !important;
+}
+
+html.dark [class*="w-[75px]"][style*="background-color: #1d4ed8"] {
+  background-color: #93c5fd !important;
+}
+
+html.dark #hero a[href="#projects"] {
+  background-color: #2f74c0 !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+html.dark #hero a[href^="/resume/"] {
+  color: #93c5fd !important;
+  border-color: #93c5fd !important;
+}
+
+html.dark #hero svg text[fill="#1d4ed8"] {
+  fill: #93c5fd;
+}
+
 html.dark body,
 html.dark #hero {
   background-color: #081426;
