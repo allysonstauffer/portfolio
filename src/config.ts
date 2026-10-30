@@ -275,7 +275,7 @@ export const siteConfig = {
     {
       company: "CodeBox",
       title: "Software Developer (Mustang Maps)",
-      dateRange: "Oct 2025 – Aug 2026",
+      dateRange: "Oct 2025 – Jun 2026",
       bullets: [
         "Developed features for Mustang Maps, a production React Native campus-navigation app with 161+ downloads, as part of an 8-person development team.",
         "Contributed to A*-based navigation over a GeoJSON walking graph with ~5.7K nodes, 6.3K edges, ~98 km of paths, and 400+ Cal Poly buildings.",
@@ -326,7 +326,6 @@ export const siteConfig = {
     {
       school: "California Polytechnic State University, San Luis Obispo",
       degree: "Bachelor of Science in Computer Science",
-      minor: "Minor in Mathematics",
       dateRange: "Expected Graduation: May 2028",
       isPrimary: true,
       gpa: "3.64",
