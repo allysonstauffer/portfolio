@@ -19,7 +19,7 @@ export const siteConfig = {
     github: "https://github.com/allysonstauffer",
   },
   aboutMe:
-    "I'm a Computer Science student at Cal Poly who enjoys building data systems that help people make better decisions. My experience spans production data engineering, infrastructure analytics, AI evaluation, and user-facing software.\n\nAt Kestrix, I built an automated reporting pipeline for drone-imagery validation. At Cal Poly's Noyce School, I'm developing telemetry pipelines and dashboards for our $3M NVIDIA-powered AI Factory.\n\nI'm especially interested in the intersection of data engineering, analytics, and product decisions—building reliable systems and making their outputs useful to the people who rely on them.",
+    "One thing I've learned from working on production engineering systems is that the most technically sophisticated solution isn't always the most useful one. I enjoy figuring out what people actually need from their data, building reliable systems around those needs, and making complex information easier to act on.\n\nMy experience spans data engineering, AI evaluation, human-computer interaction research, and technical communications. Working across these areas has shaped how I approach engineering: understanding both the systems I'm building and the people who will use them.\n\nI'm especially interested in building data-driven software and AI-powered products that solve real problems, and I love connecting with people who are doing the same.",
   skills: [
     "Python",
     "SQL",
@@ -53,7 +53,6 @@ export const siteConfig = {
         "Developed Python scoring and remediation logic and implemented the production reporting flow with BigQuery SQL and Dataform.",
         "Wrote 47 pytest cases across 11 fixtures and investigated validation data across 7 PostgreSQL/BigQuery entities.",
         "Built SQLAlchemy/Folium geospatial visualizations and shipped a filterable, exportable Looker Studio dashboard for Drone Operations.",
-        "The work enabled faster identification and prioritization; no quantified reduction in investigation time is claimed.",
       ],
       skills: ["Python", "BigQuery SQL", "Dataform", "Looker Studio", "pytest"],
     },
@@ -139,7 +138,6 @@ export const siteConfig = {
         "Contributed to A*-based navigation over a GeoJSON walking graph with approximately 5.7K nodes, 6.3K edges, 98 km of paths, and 400+ campus buildings.",
         "Shipped a MapLibre class-zones interface covering 92 floor-plan zones across 45 buildings and 4,271 classrooms.",
         "Implemented GO/Exit navigation-mode behavior for turn-by-turn workflows and contributed through collaborative Git development and code review.",
-        "These are individual contributions within an eight-person team; I did not build the entire application or routing system.",
       ],
       skills: ["React Native", "TypeScript", "MapLibre", "GeoJSON", "A* routing"],
     },
