@@ -36,6 +36,18 @@ import "../styles/global.css";
       rel="stylesheet"
     />
     <title>{siteConfig.metaTitle}</title>
+    <script is:inline>
+      try {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        const useDarkTheme =
+          savedTheme === "dark" ||
+          (savedTheme === null &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark", useDarkTheme);
+      } catch (error) {
+        console.error("Unable to load the saved theme preference.", error);
+      }
+    </script>
   </head>
   <body>
     <Header />

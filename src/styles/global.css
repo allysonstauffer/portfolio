@@ -5,3 +5,138 @@
 body {
   font-family: "IBM Plex Mono", monospace;
 }
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body,
+html.dark #hero {
+  background-color: #081426;
+}
+
+html.dark #hero > div[style*="radial-gradient"] {
+  background: radial-gradient(
+    ellipse 800px 1200px at 0% 0%,
+    color-mix(in srgb, var(--accent-color) 22%, #081426) 0%,
+    #081426 90%
+  ) !important;
+}
+
+html.dark .bg-white {
+  background-color: #10213a;
+}
+
+html.dark #hero .bg-white\/80,
+html.dark #hero .bg-white\/60 {
+  background-color: rgb(16 33 58 / 85%);
+}
+
+html.dark .bg-gray-50 {
+  background-color: #081426;
+}
+
+html.dark #projects article.bg-gray-50 {
+  background-color: #10213a;
+}
+
+html.dark footer.bg-gray-50 {
+  background-color: #06101f;
+}
+
+html.dark #contact.bg-gray-900 {
+  background-color: #030914;
+}
+
+html.dark #contact .bg-white {
+  background-color: #f3f4f6;
+}
+
+html.dark .text-gray-900,
+html.dark .text-gray-800 {
+  color: #f3f4f6;
+}
+
+html.dark .text-gray-700,
+html.dark .text-gray-600 {
+  color: #d1d5db;
+}
+
+html.dark .text-gray-500 {
+  color: #9ca3af;
+}
+
+html.dark .text-gray-400 {
+  color: #9ca3af;
+}
+
+html.dark .text-gray-300 {
+  color: #d1d5db;
+}
+
+html.dark .text-gray-200 {
+  color: #e5e7eb;
+}
+
+html.dark #contact .text-gray-900 {
+  color: #081426;
+}
+
+html.dark .border-gray-300 {
+  border-color: #29415f;
+}
+
+html.dark .border-gray-200,
+html.dark .border-gray-100 {
+  border-color: #1b2d49;
+}
+
+html.dark .ring-gray-200 {
+  --tw-ring-color: #29415f;
+}
+
+html.dark .bg-gray-400 {
+  background-color: #64748b;
+}
+
+html.dark .text-gray-100 {
+  color: #1b2d49;
+}
+
+html.dark .stroke-gray-200 {
+  stroke: #1b2d49;
+}
+
+html.dark .decoration-gray-400 {
+  text-decoration-color: #9ca3af;
+}
+
+html.dark .hover\:text-black:hover {
+  color: #f9fafb;
+}
+
+html.dark .hover\:border-gray-500:hover {
+  border-color: #7693b8;
+}
+
+html.dark .hover\:bg-gray-200:hover {
+  background-color: #e5e7eb;
+}
+
+html.dark .hover\:bg-gray-100:hover {
+  background-color: #1b2d49;
+}
+
+html.dark #header.bg-white\/80 {
+  background-color: rgb(8 20 38 / 88%);
+}
+
+.theme-toggle {
+  color: #1e293b;
+}
+
+html.dark .theme-toggle {
+  color: #f3f4f6;
+  background-color: rgb(16 33 58 / 95%);
+  border-color: #29415f;
+}

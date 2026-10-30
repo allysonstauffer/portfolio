@@ -70,6 +70,42 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
   </nav>
 </header>
 
+<button
+  id="theme-toggle"
+  type="button"
+  aria-label="Enable dark mode"
+  aria-pressed="false"
+  class="theme-toggle fixed right-4 top-4 z-[60] inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/90 px-3 py-2 text-sm font-semibold shadow-sm transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-color)]"
+  style={`--accent-color: ${siteConfig.accentColor}`}
+>
+  <svg
+    class="theme-icon-sun h-4 w-4"
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+  </svg>
+  <svg
+    class="theme-icon-moon hidden h-4 w-4"
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+  </svg>
+  <span id="theme-toggle-label">Dark mode</span>
+</button>
+
 <script>
   window.addEventListener("scroll", () => {
     const header = document.getElementById("header");
@@ -77,6 +113,44 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
       header?.classList.add("bg-white/80", "backdrop-blur-sm");
     } else {
       header?.classList.remove("bg-white/80", "backdrop-blur-sm");
+    }
+  });
+
+  const themeToggle = document.getElementById("theme-toggle");
+  const sunIcon = themeToggle?.querySelector(".theme-icon-sun");
+  const moonIcon = themeToggle?.querySelector(".theme-icon-moon");
+  const themeLabel = document.getElementById("theme-toggle-label");
+
+  if (
+    !(themeToggle instanceof HTMLButtonElement) ||
+    !(sunIcon instanceof SVGElement) ||
+    !(moonIcon instanceof SVGElement) ||
+    !(themeLabel instanceof HTMLSpanElement)
+  ) {
+    throw new Error("The theme toggle controls could not be initialized.");
+  }
+
+  const updateThemeButton = (isDark: boolean) => {
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.setAttribute(
+      "aria-label",
+      isDark ? "Enable light mode" : "Enable dark mode",
+    );
+    themeLabel.textContent = isDark ? "Light mode" : "Dark mode";
+    sunIcon.classList.toggle("hidden", isDark);
+    moonIcon.classList.toggle("hidden", !isDark);
+  };
+
+  updateThemeButton(document.documentElement.classList.contains("dark"));
+
+  themeToggle.addEventListener("click", () => {
+    const isDark = document.documentElement.classList.toggle("dark");
+    updateThemeButton(isDark);
+
+    try {
+      localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
+    } catch (error) {
+      console.error("Unable to save the theme preference.", error);
     }
   });
 </script>
