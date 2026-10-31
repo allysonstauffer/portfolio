@@ -11,7 +11,7 @@ export const siteConfig = {
     "Seeking Summer 2027 internships in Software Engineering, Data Engineering, AI Infrastructure, and related technical roles, particularly in the San Francisco Bay Area.",
   availability: "Seeking Summer 2027 internships · San Francisco Bay Area",
   resumeUrl: "/resume/Ally_Stauffer_Resume.pdf",
-  accentColor: "#1d4ed8",
+  accentColor: "#285b80",
   social: {
     email: "astauf02@calpoly.edu",
     linkedin: "https://linkedin.com/in/allystauffer",
@@ -23,7 +23,7 @@ export const siteConfig = {
     "Python",
     "SQL",
     "Data Engineering",
-    "Analytics Engineering",
+    "Software Engineering",
     "BigQuery",
     "Data Visualization",
     "AI Infrastructure",
@@ -42,10 +42,10 @@ export const siteConfig = {
         "Built scoring and remediation logic, automated hourly reporting, and shipped an operations dashboard.",
       impact:
         "Operators could identify incomplete coverage, investigate failed properties, and prioritize re-uploads or reflights without tracing fragmented engineering data manually.",
-      highlights: [
-        "Hourly production reporting",
-        "47 tests · 11 fixtures",
-        "7 PostgreSQL/BigQuery entities",
+      metrics: [
+        { value: "Hours", label: "Instead of days to identify incomplete coverage" },
+        { value: "99%", label: "Image completeness threshold" },
+        { value: "47", label: "Automated tests across 11 fixtures" },
       ],
       details: [
         "Evaluated RGB and thermal imagery completeness, coverage, quality, and reconstruction status, applying a 99% image-completeness threshold.",
@@ -67,10 +67,10 @@ export const siteConfig = {
         "Designing Python telemetry pipelines and stakeholder-facing dashboards using read-only NVIDIA Run APIs and approved, aggregated workload data.",
       focus:
         "Developing infrastructure analytics to give stakeholders clearer visibility into GPU workloads, resource utilization, and capacity planning.",
-      highlights: [
-        "$3M AI Factory",
-        "4 NVIDIA DGX B200 systems",
-        "Primary student engineer",
+      metrics: [
+        { value: "$3M", label: "AI Factory infrastructure" },
+        { value: "4", label: "NVIDIA DGX B200 systems" },
+        { value: "Primary", label: "Student software engineer" },
       ],
       details: [
         "Designing telemetry for workload activity, running and pending jobs, requested and allocated GPU resources, utilization, and capacity metrics.",
@@ -103,10 +103,10 @@ export const siteConfig = {
         "Created a CSV-in, JSON-out evaluation workflow covering classification and calibration metrics.",
       impact:
         "The reports help identify unreliable or confidently incorrect predictions for human review.",
-      highlights: [
-        "Python AI evaluation framework",
-        "10-bin expected calibration error",
-        "Reproducible JSON reports",
+      metrics: [
+        { value: "10-bin", label: "Expected calibration error" },
+        { value: "4", label: "Evaluation metric families" },
+        { value: "CSV → JSON", label: "Reproducible reporting" },
       ],
       details: [
         "Accepts per-image labels, predictions, and confidence scores from CSV through a command-line workflow.",
@@ -128,16 +128,18 @@ export const siteConfig = {
         "Contributed to navigation workflows and shipped a MapLibre classroom-zones layer; the routing system was a collaborative team effort.",
       impact:
         "The production app has 161+ downloads and classroom-zone coverage spanning 4,271 classrooms.",
-      highlights: [
-        "161+ downloads",
-        "5.7K nodes · 6.3K edges",
-        "4,271 classrooms",
+      metrics: [
+        { value: "98 km", label: "Campus navigation paths" },
+        { value: "45", label: "Buildings mapped" },
+        { value: "4,271", label: "Classrooms covered" },
       ],
       details: [
-        "Contributed to A*-based navigation over a GeoJSON walking graph with approximately 5.7K nodes, 6.3K edges, 98 km of paths, and 400+ campus buildings.",
+        "Contributed to A*-based navigation over a GeoJSON walking graph with approximately 5.7K nodes, 6.3K navigation edges, 98 km of paths, and 400+ campus buildings.",
         "Shipped a MapLibre class-zones interface covering 92 floor-plan zones across 45 buildings and 4,271 classrooms.",
+        "Production app with 161+ downloads, built by an eight-person team.",
         "Implemented GO/Exit navigation-mode behavior for turn-by-turn workflows and contributed through collaborative Git development and code review.",
       ],
+      link: "https://github.com/codebox-calpoly/MustangMaps",
       skills: ["React Native", "TypeScript", "MapLibre", "GeoJSON", "A* routing"],
     },
     {
@@ -152,10 +154,10 @@ export const siteConfig = {
         "Led product direction and built adaptive interview and evaluation flows with a six-person team.",
       impact:
         "Presented the working product to 150+ attendees, connecting engineering decisions to a user-facing interview experience.",
-      highlights: [
-        "AI-powered interview platform",
-        "6-person team",
-        "Presented to 150+ attendees",
+      metrics: [
+        { value: "150+", label: "Presentation attendees" },
+        { value: "6", label: "Team members" },
+        { value: "AI-powered", label: "Adaptive interview platform" },
       ],
       details: [
         "Built with Next.js, TypeScript, OpenAI API, and Web Speech API, including adaptive follow-up questions.",
@@ -240,16 +242,6 @@ export const siteConfig = {
   ],
   experience: [
     {
-      company: "Cal Poly Noyce School of Applied Computing",
-      title: "Software Engineer",
-      dateRange: "Aug 2026 – Present",
-      bullets: [
-        "Selected as the primary student Software Engineer to develop infrastructure monitoring and data visualization for Cal Poly’s $3M NVIDIA-powered AI Factory, which uses four NVIDIA DGX B200 systems.",
-        "Develop Python telemetry pipelines and stakeholder-facing dashboards using NVIDIA Run data to make workload activity, GPU allocation, and utilization useful for capacity planning; development is ongoing.",
-        "Partner with Noyce leadership and infrastructure staff to translate complex engineering data into accessible insights for students and faculty while informing infrastructure planning and investment decisions.",
-      ],
-    },
-    {
       company: "Kestrix",
       title: "Software Engineering Intern",
       dateRange: "Jun 2026 – Aug 2026",
@@ -261,12 +253,12 @@ export const siteConfig = {
     },
     {
       company: "Cal Poly Noyce School of Applied Computing",
-      title: "Student Communications Lead",
-      dateRange: "Feb 2026 – Present",
+      title: "Software Engineer",
+      dateRange: "Aug 2026 – Present",
       bullets: [
-        "Lead cross-platform communications and a student marketing team across LinkedIn, Instagram, Facebook, and university channels, building structured content, asset-management, and project workflows while managing and mentoring team members.",
-        "Drive promotion and coverage of AI events, distinguished speakers, hackathons, research, and student programs; an incoming-student outreach campaign generated 500+ new Instagram followers.",
-        "Selected as one of two student speakers to address 400+ incoming freshmen and transfer students, representing Noyce and advising on computing, research, academics, and campus opportunities.",
+        "Selected as the primary student Software Engineer to develop infrastructure monitoring and data visualization for Cal Poly’s $3M NVIDIA-powered AI Factory, which uses four NVIDIA DGX B200 systems.",
+        "Develop Python telemetry pipelines and stakeholder-facing dashboards using NVIDIA Run data to make workload activity, GPU allocation, and utilization useful for capacity planning; development is ongoing.",
+        "Partner with Noyce leadership and infrastructure staff to translate complex engineering data into accessible insights for students and faculty while informing infrastructure planning and investment decisions.",
       ],
     },
     {
@@ -307,6 +299,16 @@ export const siteConfig = {
         "Taught 100+ high school students game development with p5.js, covering game mechanics, design principles, and creative coding.",
         "Led daily advisory sessions and 1:1 debugging, technical feedback, and project support through office hours.",
         "Coordinated attendance, surveys, student engagement, and learning accommodations across multiple time zones.",
+      ],
+    },
+    {
+      company: "Cal Poly Noyce School of Applied Computing",
+      title: "Student Communications Lead",
+      dateRange: "Feb 2026 – Present",
+      bullets: [
+        "Lead cross-platform communications and a student marketing team across LinkedIn, Instagram, Facebook, and university channels, building structured content, asset-management, and project workflows while managing and mentoring team members.",
+        "Drive promotion and coverage of AI events, distinguished speakers, hackathons, research, and student programs; an incoming-student outreach campaign generated 500+ new Instagram followers.",
+        "Selected as one of two student speakers to address 400+ incoming freshmen and transfer students, representing Noyce and advising on computing, research, academics, and campus opportunities.",
       ],
     },
     {

@@ -4,7 +4,7 @@ import { siteConfig } from "../config";
 
 <div
   id="hero"
-  class="relative isolate overflow-hidden bg-white pt-8 pb-6 md:flex md:min-h-screen md:flex-col md:justify-center md:pt-12 md:pb-8"
+  class="site-hero relative isolate overflow-hidden bg-white pt-24 pb-12 md:flex md:min-h-[88vh] md:flex-col md:justify-center md:pt-28 md:pb-16"
   style={`--accent-color: ${siteConfig.accentColor}`}
 >
   <!-- Gradient overlay -->
@@ -130,35 +130,35 @@ import { siteConfig } from "../config";
       stroke-width={0}></rect>
   </svg>
   <div
-    class="relative z-10 mx-auto flex w-full max-w-7xl items-center px-6 py-2 sm:px-12 sm:py-4 md:px-24 md:py-4"
+    class="hero-inner relative z-10 mx-auto flex w-full max-w-7xl items-center px-6 py-8 sm:px-10 sm:py-12 lg:px-16"
   >
-    <div class="w-full">
+    <div class="hero-copy w-full">
       <h1
-        class="text-pretty text-3xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-200 sm:text-5xl md:text-6xl lg:text-7xl"
+        class="hero-name text-pretty text-4xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-200 sm:text-6xl md:text-7xl lg:text-8xl"
       >
         I'm <span style={{ color: siteConfig.accentColor }}
           >{siteConfig.name}</span
         >
       </h1>
       <h2
-        class="mt-4 max-w-6xl text-pretty text-2xl font-bold tracking-tight text-gray-800 animate-fade-in animation-delay-400 sm:text-4xl md:text-4xl"
+        class="hero-headline mt-6 max-w-4xl text-pretty text-2xl font-semibold tracking-tight text-gray-800 animate-fade-in animation-delay-400 sm:text-4xl md:text-5xl"
       >
         {siteConfig.heroHeadline}
       </h2>
-      <p class="mt-4 max-w-5xl text-pretty text-sm leading-6 text-gray-600 animate-fade-in sm:text-lg sm:leading-relaxed md:text-lg">
+      <p class="hero-description mt-6 max-w-3xl text-pretty text-base leading-7 text-gray-600 animate-fade-in sm:text-lg sm:leading-8">
         {siteConfig.heroDescription}
       </p>
-      <p class="mt-2 text-sm font-semibold text-gray-700 sm:text-base">
+      <p class="hero-availability mt-5 text-sm font-semibold text-gray-700 sm:text-base">
         {siteConfig.availability}
       </p>
-      <div class="mt-4 flex max-w-3xl flex-wrap gap-2">
+      <div class="hero-skills mt-6 flex max-w-3xl flex-wrap gap-2">
         {siteConfig.skills.map((skill) => (
           <span class="rounded-full border border-gray-300 bg-white/80 px-3 py-1 text-sm font-medium text-gray-700">
             {skill}
           </span>
         ))}
       </div>
-      <div class="mt-4 flex flex-wrap items-center gap-3">
+      <div class="hero-actions mt-8 flex flex-wrap items-center gap-3">
         <a
           href="#projects"
           class="rounded-lg px-5 py-3 text-sm font-semibold text-white transition-colors hover:opacity-90 sm:text-base"
@@ -191,7 +191,7 @@ import { siteConfig } from "../config";
     </div>
   </div>
   <div
-    class="relative z-10 mx-auto flex w-full max-w-7xl gap-x-5 px-6 pt-4 text-gray-700 animate-fade-in animation-delay-600 sm:gap-x-6 sm:px-12 md:gap-x-8 md:px-24"
+    class="hero-social relative z-10 mx-auto flex w-full max-w-7xl gap-x-5 px-6 pb-4 text-gray-700 animate-fade-in animation-delay-600 sm:gap-x-6 sm:px-10 lg:px-16"
   >
     {
       siteConfig.social?.email && (

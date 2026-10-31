@@ -2,7 +2,7 @@
 import { siteConfig } from "../config";
 ---
 
-<section id="about" class="p-8 sm:p-12 md:p-16 lg:p-24">
+<section id="about" class="site-section">
   <div>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
       <div class="lg:col-span-4">
@@ -19,9 +19,9 @@ import { siteConfig } from "../config";
       </div>
 
       <div class="lg:col-span-8">
-        <div class="space-y-4 text-lg leading-relaxed text-gray-600 sm:text-xl md:text-2xl">
-          {siteConfig.aboutMe.split("\n\n").map((paragraph) => (
-            <p>{paragraph}</p>
+        <div class="about-copy space-y-4 text-lg leading-relaxed text-gray-600 sm:text-xl md:text-2xl">
+          {siteConfig.aboutMe.split("\n\n").map((paragraph, index) => (
+            <p class={index === 0 ? "about-lead" : ""}>{paragraph}</p>
           ))}
         </div>
       </div>

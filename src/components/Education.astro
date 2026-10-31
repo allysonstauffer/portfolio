@@ -1,65 +1,44 @@
 ---
 import { siteConfig } from "../config";
+
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 ---
 
-{
-  hasEducation && (
-    <section id="education" class="p-8 sm:p-12 md:p-16 lg:p-24">
-      <div>
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-          <div class="lg:col-span-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-              Education
-            </h2>
-            <div
-              class="w-[75px] h-[5px] mt-2 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
-            />
-          </div>
+{hasEducation && (
+  <section id="education" class="site-section">
+    <div class="section-inner">
+      <div class="section-intro">
+        <p class="section-kicker">Academic background</p>
+        <h2 class="section-title">Education</h2>
+      </div>
 
-          <div class="lg:col-span-8">
-            <div class="space-y-8">
-              {siteConfig.education.map((edu) => (
-                <details
-                  open={edu.isPrimary}
-                  class={`group bg-white rounded-lg shadow-sm border border-gray-300 hover:border-[var(--accent-color)] hover:shadow-md transition-all duration-300 ${
-                    edu.isPrimary ? "p-4 sm:p-5 md:p-6" : "p-3 sm:p-4"
-                  }`}
-                  style={`--accent-color: ${siteConfig.accentColor}`}
-                >
-                  <summary class="flex cursor-pointer list-none items-start justify-between gap-4 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-color)]">
-                    <div>
-                      <h3
-                        class={`font-semibold text-gray-900 ${
-                          edu.isPrimary
-                            ? "text-lg sm:text-xl"
-                            : "text-base sm:text-lg"
-                        }`}
-                      >
-                          {edu.school}
-                      </h3>
-                      <p
-                        class={edu.isPrimary ? "text-base sm:text-lg" : "text-sm sm:text-base"}
-                        style={`color: ${siteConfig.accentColor}`}
-                      >
-                          {edu.degree}
-                      </p>
-                      {edu.gpa && (
-                        <p class="mt-1 text-sm font-medium text-gray-600">
-                          GPA: {edu.gpa}
-                        </p>
-                      )}
-                    </div>
-                    <span class="text-xs sm:text-sm text-gray-500 mt-2 sm:mt-0">
-                      {edu.dateRange}
-                    </span>
-                    <svg
-                      aria-hidden="true"
-                      class="mt-1 h-4 w-4 flex-shrink-0 text-gray-500 transition-transform group-open:rotate-45"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
+      <div class="education-list">
+        {siteConfig.education.map((education) => {
+          const hasDetails = Boolean(
+            education.achievements?.length ||
+              education.coursework?.length ||
+              education.activities?.length ||
+              education.highlights?.length,
+          );
+
+          return (
+            <article class="education-card">
+              <div class="education-heading">
+                <div>
+                  <h3>{education.school}</h3>
+                  <p class="education-degree">{education.degree}</p>
+                  {education.gpa && (
+                    <p class="education-gpa">GPA: {education.gpa}</p>
+                  )}
+                </div>
+                <p class="education-date">{education.dateRange}</p>
+              </div>
+
+              {hasDetails && (
+                <details class="education-details">
+                  <summary>
+                    <span>Coursework, activities &amp; achievements</span>
+                    <svg aria-hidden="true" viewBox="0 0 16 16" fill="none">
                       <path
                         d="M8 3v10M3 8h10"
                         stroke="currentColor"
@@ -68,97 +47,68 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
                       />
                     </svg>
                   </summary>
-
-                  {edu.achievements?.length > 0 && (
-                    <ul class="space-y-2">
-                      {edu.achievements.map((achievement) => (
-                        <li class="flex items-start">
-                          <span class="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                          <span class="text-sm sm:text-base text-gray-600">
-                            {achievement}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {edu.coursework && (
-                    <div class="mt-5 border-t border-gray-100 pt-4">
-                      <h4 class="text-sm font-semibold uppercase tracking-wide text-gray-700">
-                        Relevant Coursework
-                      </h4>
-                      <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {edu.coursework.map((group) => (
-                          <div>
-                            <h5
-                              class="text-sm font-medium"
-                              style={`color: ${siteConfig.accentColor}`}
-                            >
-                              {group.category}
-                            </h5>
-                            <ul class="mt-1 space-y-1">
-                              {group.courses.map((course) => (
-                                <li class="text-sm text-gray-600">{course}</li>
-                              ))}
-                            </ul>
-                          </div>
+                  <div class="education-detail-content">
+                    {education.achievements?.length > 0 && (
+                      <ul class="education-achievements">
+                        {education.achievements.map((achievement) => (
+                          <li>{achievement}</li>
                         ))}
-                      </div>
-                    </div>
-                  )}
+                      </ul>
+                    )}
 
-                  {edu.activities && (
-                    <div class="mt-5 border-t border-gray-100 pt-4">
-                      <h4 class="text-sm font-semibold uppercase tracking-wide text-gray-700">
-                        Activities
-                      </h4>
-                      <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {edu.activities.map((group) => (
-                          <div>
-                            <h5
-                              class="text-sm font-medium"
-                              style={`color: ${siteConfig.accentColor}`}
-                            >
-                              {group.category}
-                            </h5>
-                            <ul class="mt-1 space-y-1">
-                              {group.items.map((item) => (
-                                <li class="text-sm text-gray-600">{item}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
+                    {education.coursework?.length > 0 && (
+                      <div class="education-detail-group">
+                        <h4>Relevant Coursework</h4>
+                        <div class="education-detail-grid">
+                          {education.coursework.map((group) => (
+                            <div>
+                              <h5>{group.category}</h5>
+                              <ul>
+                                {group.courses.map((course) => <li>{course}</li>)}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
 
-                  {edu.highlights && (
-                    <div class="mt-5 border-t border-gray-100 pt-4">
-                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {edu.highlights.map((group) => (
-                          <div>
-                            <h4
-                              class="text-sm font-semibold uppercase tracking-wide"
-                              style={`color: ${siteConfig.accentColor}`}
-                            >
-                              {group.category}
-                            </h4>
-                            <ul class="mt-2 space-y-1">
-                              {group.items.map((item) => (
-                                <li class="text-sm text-gray-600">{item}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
+                    {education.activities?.length > 0 && (
+                      <div class="education-detail-group">
+                        <h4>Activities</h4>
+                        <div class="education-detail-grid">
+                          {education.activities.map((group) => (
+                            <div>
+                              <h5>{group.category}</h5>
+                              <ul>
+                                {group.items.map((item) => <li>{item}</li>)}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+
+                    {education.highlights?.length > 0 && (
+                      <div class="education-detail-group">
+                        <div class="education-detail-grid">
+                          {education.highlights.map((group) => (
+                            <div>
+                              <h4>{group.category}</h4>
+                              <ul>
+                                {group.items.map((item) => <li>{item}</li>)}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </details>
-              ))}
-            </div>
-          </div>
-        </div>
+              )}
+            </article>
+          );
+        })}
       </div>
-    </section>
-  )
-}
+    </div>
+  </section>
+)}

@@ -8,114 +8,75 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 ---
 
-<header
-  id="header"
-  class="fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-300"
->
-  <nav class="max-w-7xl mx-auto px-8 py-4">
-    <ul class="flex items-center gap-8 justify-center">
-      <li>
-        <a
-          href="#about"
-          class="text-gray-700 hover:text-black transition-colors font-medium"
-        >
-          About
-        </a>
-      </li>
+<header id="header" class="site-header fixed inset-x-0 top-0 z-50">
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="site-brand" href="#hero" aria-label={`${siteConfig.name} home`}>
+      <span aria-hidden="true">AS</span>
+    </a>
+    <ul class="site-nav-links">
       {
         hasProjects && (
           <li>
-            <a
-              href="#projects"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Featured Work
-            </a>
+            <a href="#projects">Featured Work</a>
           </li>
         )
       }
+      <li><a href="#about">About</a></li>
       {
         hasExperience && (
           <li>
-            <a
-              href="#experience"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Experience
-            </a>
+            <a href="#experience">Experience</a>
           </li>
         )
       }
       {
         hasEducation && (
           <li>
-            <a
-              href="#education"
-              class="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Education
-            </a>
+            <a href="#education">Education</a>
           </li>
         )
       }
-      <li>
-        <a
-          href="#contact"
-          class="text-gray-700 hover:text-black transition-colors font-medium"
-        >
-          Contact
-        </a>
-      </li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
+
+    <button
+      id="theme-toggle"
+      type="button"
+      aria-label="Enable dark mode"
+      aria-pressed="false"
+      class="theme-toggle"
+    >
+      <svg
+        class="theme-icon-sun"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3l1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3l1.42-1.42"></path>
+      </svg>
+      <svg
+        class="theme-icon-moon"
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+      </svg>
+      <span id="theme-toggle-label">Dark mode</span>
+    </button>
   </nav>
 </header>
 
-<button
-  id="theme-toggle"
-  type="button"
-  aria-label="Enable dark mode"
-  aria-pressed="false"
-  class="theme-toggle fixed right-4 top-4 z-[60] inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/90 px-3 py-2 text-sm font-semibold shadow-sm transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-color)]"
-  style={`--accent-color: ${siteConfig.accentColor}`}
->
-  <svg
-    class="theme-icon-sun h-4 w-4"
-    aria-hidden="true"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <circle cx="12" cy="12" r="4"></circle>
-    <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
-  </svg>
-  <svg
-    class="theme-icon-moon hidden h-4 w-4"
-    aria-hidden="true"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
-  </svg>
-  <span id="theme-toggle-label">Dark mode</span>
-</button>
-
 <script>
-  window.addEventListener("scroll", () => {
-    const header = document.getElementById("header");
-    if (window.scrollY > 100) {
-      header?.classList.add("bg-white/80", "backdrop-blur-sm");
-    } else {
-      header?.classList.remove("bg-white/80", "backdrop-blur-sm");
-    }
-  });
-
   const themeToggle = document.getElementById("theme-toggle");
   const sunIcon = themeToggle?.querySelector(".theme-icon-sun");
   const moonIcon = themeToggle?.querySelector(".theme-icon-moon");
@@ -154,9 +115,3 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
     }
   });
 </script>
-
-<style>
-  html {
-    scroll-behavior: smooth;
-  }
-</style>

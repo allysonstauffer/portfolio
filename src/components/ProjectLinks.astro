@@ -1,0 +1,30 @@
+---
+interface Props {
+  project: {
+    link?: string;
+    officialLink?: {
+      label: string;
+      url: string;
+    };
+  };
+}
+
+const { project } = Astro.props;
+---
+
+<div class="project-links">
+  {project.link && (
+    <a href={project.link} target="_blank" rel="noopener noreferrer">
+      Explore project <span aria-hidden="true">↗</span>
+    </a>
+  )}
+  {project.officialLink && (
+    <a
+      href={project.officialLink.url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {project.officialLink.label} <span aria-hidden="true">↗</span>
+    </a>
+  )}
+</div>
