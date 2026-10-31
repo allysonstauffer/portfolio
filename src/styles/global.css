@@ -2482,3 +2482,100 @@ html.dark #contact {
     radial-gradient(ellipse 38rem 28rem at 4% 8%, rgb(185 101 89 / 18%), transparent 74%),
     #081320;
 }
+
+/* Final compaction pass */
+.pipeline-figure ol {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+.pipeline-figure li {
+  min-height: 2.4rem;
+  padding: 0.3rem 0.25rem;
+  font-size: 0.74rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.pipeline-figure li:nth-child(2)::after {
+  display: block;
+}
+.pipeline-figure li:not(:last-child)::after {
+  right: -0.45rem;
+  font-size: 0.85rem;
+}
+@media (max-width: 480px) {
+  .pipeline-figure ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem 0.9rem;
+  }
+  .pipeline-figure li {
+    font-size: 0.8rem;
+  }
+  .pipeline-figure li:nth-child(2)::after {
+    display: none;
+  }
+}
+
+.project-showcase,
+.project-compact {
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+.project-showcase .showcase-topline,
+.compact-topline {
+  margin-bottom: 0.6rem;
+}
+.project-summary {
+  margin-top: 0.5rem;
+  line-height: 1.55;
+}
+.project-outcome {
+  margin-top: 0.65rem;
+  padding: 0.55rem 0.8rem;
+}
+.project-showcase .showcase-aside {
+  gap: 0.65rem;
+}
+.project-showcase .metric-strip,
+.project-compact .metric-strip {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+}
+.project-details {
+  margin-top: 0.7rem;
+}
+.showcase-list,
+.compact-project-grid {
+  gap: 0.85rem;
+}
+.compact-project-grid {
+  margin-top: 0.85rem;
+}
+
+/* Section spacing */
+#projects.site-section {
+  padding-top: clamp(2.75rem, 5vw, 4.25rem);
+  padding-bottom: clamp(2.5rem, 4.5vw, 3.75rem);
+}
+#projects .section-intro {
+  margin-bottom: clamp(1.25rem, 2.6vw, 1.9rem);
+}
+#projects .additional-projects {
+  margin-top: 1.75rem;
+}
+#contact {
+  padding-top: clamp(3rem, 5vw, 4.25rem);
+  padding-bottom: clamp(3rem, 5vw, 4.25rem);
+}
+
+/* Uniform hero skill tags */
+html:not(.dark) .hero-skills span,
+html:not(.dark) .hero-skills span:nth-child(n) {
+  border-color: #c5d6e2;
+  background: #e8f0f5;
+  color: #192f45;
+}
+html.dark .hero-skills span,
+html.dark .hero-skills span:nth-child(n) {
+  border-color: rgb(154 194 223 / 28%);
+  background: rgb(154 194 223 / 12%);
+  color: var(--ink);
+}

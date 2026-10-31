@@ -6,6 +6,7 @@ import ProjectLinks from "./ProjectLinks.astro";
 const featuredProjects = siteConfig.featuredProjects;
 const compactFeaturedProjects = featuredProjects.slice(2);
 const additionalProjects = siteConfig.additionalProjects;
+const pipelineSteps = ["Python", "BigQuery SQL", "Dataform", "Looker Studio"];
 
 function metricLabel(metric: string) {
   if (/test|fixture/i.test(metric)) return "Testing";
@@ -71,7 +72,9 @@ function metricLabel(metric: string) {
                     </figure>
                   )}
                   <div class="project-skills">
-                    {project.skills.map((skill) => <span>{skill}</span>)}
+                    {project.skills
+                      .filter((skill) => index !== 0 || !pipelineSteps.includes(skill))
+                      .map((skill) => <span>{skill}</span>)}
                   </div>
                   <ProjectLinks project={project} />
                 </div>

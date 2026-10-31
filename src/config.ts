@@ -157,7 +157,7 @@ export const siteConfig = {
       metrics: [
         { value: "150+", label: "Presentation attendees" },
         { value: "6", label: "Team members" },
-        { value: "AI-powered", label: "Adaptive interview platform" },
+        { value: "0", label: "Backend servers required" },
       ],
       details: [
         "Built with Next.js, TypeScript, OpenAI API, and Web Speech API, including adaptive follow-up questions.",
@@ -415,6 +415,8 @@ export const siteConfig = {
         description:
           "Selected as the sole recipient from a graduating class of 450+ students for excellence in history and social sciences.",
       },
+    ],
+    additional: [
       {
         title: "College Park High School — Academic Recognition",
         organization: "Top 3% of graduating class",
@@ -426,8 +428,6 @@ export const siteConfig = {
         description:
           "Recognized for proficiency in reading, writing, and speaking French following five years of language study.",
       },
-    ],
-    additional: [
       {
         title: "Choir Medallion",
         organization: "College Park High School · 2024",
