@@ -2119,3 +2119,22 @@ html.dark .hero-skills span:nth-child(3n) {
 html.dark #experience .experience-marker {
   border-color: var(--page);
 }
+
+html.dark .site-hero {
+  background: #0a1420;
+}
+
+html.dark #hero > div[style*="radial-gradient"] {
+  background:
+    radial-gradient(
+      ellipse 34rem 27rem at 84% 24%,
+      rgb(70 120 160 / 38%),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 32rem 26rem at 82% 78%,
+      rgb(185 101 89 / 26%),
+      transparent 72%
+    ),
+    linear-gradient(125deg, #0d1826 0%, #0a1420 60%, #101a28 125%) !important;
+}
