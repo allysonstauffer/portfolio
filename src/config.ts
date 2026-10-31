@@ -1,7 +1,6 @@
 export const siteConfig = {
   name: "Ally Stauffer",
-  title: "Data Engineering & Product Analytics",
-  metaTitle: "Ally Stauffer | Data Engineering & Product Analytics",
+  metaTitle: "Ally Stauffer",
   description:
     "Computer Science student at Cal Poly building production data pipelines, AI infrastructure analytics, and data-driven software. Previously at Kestrix; currently at Cal Poly Noyce.",
   heroHeadline:
