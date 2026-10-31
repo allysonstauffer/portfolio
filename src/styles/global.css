@@ -2146,3 +2146,11 @@ html.dark #hero > div[style*="radial-gradient"] {
 .experience-resume {
   margin: 0 0 1.75rem;
 }
+
+/* Section dividers */
+#projects, #about, #experience, #education, #honors-leadership, #contact {
+  border-top: 1px solid #b96559;
+}
+html.dark #projects, html.dark #about, html.dark #experience, html.dark #education, html.dark #honors-leadership, html.dark #contact {
+  border-top-color: var(--line);
+}
