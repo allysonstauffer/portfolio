@@ -6,9 +6,9 @@ export const siteConfig = {
   heroHeadline:
     "Building data systems that turn complex information into useful decisions.",
   heroDescription:
-    "I'm a Computer Science student at Cal Poly focused on data engineering, analytics, and AI-powered products. I built production reporting pipelines at Kestrix in London and now develop infrastructure analytics for Cal Poly's $3M NVIDIA-powered AI Factory.",
+    "I'm a Computer Science student at Cal Poly interested in software engineering, AI, and building systems that solve real-world problems. I built production data pipelines for drone operations at Kestrix in London and now develop infrastructure analytics for Cal Poly's $3M NVIDIA-powered AI Factory.",
   internshipSearch:
-    "Seeking Summer 2027 internships in Data Engineering, Analytics Engineering, Product Analytics, and data-focused Software Engineering, particularly in the San Francisco Bay Area.",
+    "Seeking Summer 2027 internships in Software Engineering, Data Engineering, AI Infrastructure, and related technical roles, particularly in the San Francisco Bay Area.",
   availability: "Seeking Summer 2027 internships · San Francisco Bay Area",
   resumeUrl: "/resume/Ally_Stauffer_Resume.pdf",
   accentColor: "#1d4ed8",
