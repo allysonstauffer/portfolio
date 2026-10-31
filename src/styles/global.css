@@ -2154,3 +2154,331 @@ html.dark #hero > div[style*="radial-gradient"] {
 html.dark #projects, html.dark #about, html.dark #experience, html.dark #education, html.dark #honors-leadership, html.dark #contact {
   border-top-color: var(--line);
 }
+
+/* Muted coral nav bar */
+.site-header {
+  background: #a64e43;
+  border-bottom-color: rgb(255 255 255 / 25%);
+}
+html.dark .site-header {
+  background: #8a4036;
+}
+.site-nav-links a {
+  color: #fffefa;
+}
+.site-nav-links a:hover,
+.site-nav-links a:focus-visible {
+  color: #fffefa;
+  text-decoration: underline;
+  text-underline-offset: 0.35rem;
+}
+.site-brand:hover,
+.theme-toggle:hover {
+  border-color: #fffefa;
+}
+
+.site-brand {
+  background: transparent;
+  border-color: rgb(255 254 250 / 70%);
+  color: #fffefa;
+}
+
+/* Name is coral; nav bar takes the former name blue */
+.hero-name span {
+  color: var(--coral) !important;
+}
+.site-header {
+  background: #285b80;
+}
+html.dark .site-header {
+  background: #9ac2df;
+}
+html.dark .site-nav-links a,
+html.dark .site-nav-links a:hover,
+html.dark .site-nav-links a:focus-visible,
+html.dark .site-brand {
+  color: #0a1420;
+}
+html.dark .site-brand {
+  border-color: rgb(10 20 32 / 70%);
+}
+html.dark .site-brand:hover,
+html.dark .theme-toggle:hover {
+  border-color: #0a1420;
+}
+
+/* AS logo: coral on a light tile so it reads on the blue bar */
+.site-brand,
+html.dark .site-brand {
+  background: var(--surface);
+  border-color: var(--surface);
+  color: #a64e43;
+}
+html.dark .site-brand {
+  color: var(--coral);
+}
+.site-brand:hover,
+html.dark .site-brand:hover {
+  border-color: var(--coral);
+}
+
+/* AS logo: white letters on a muted coral squircle */
+.site-brand,
+html.dark .site-brand {
+  background: #a64e43;
+  border-color: #a64e43;
+  color: #ffffff;
+}
+.site-brand:hover,
+html.dark .site-brand:hover {
+  border-color: #ffffff;
+}
+
+/* Black nav bar */
+.site-header,
+html.dark .site-header {
+  background: #000000;
+  border-bottom-color: rgb(255 255 255 / 20%);
+}
+.site-nav-links a,
+html.dark .site-nav-links a,
+html.dark .site-nav-links a:hover,
+html.dark .site-nav-links a:focus-visible {
+  color: #ffffff;
+}
+.theme-toggle:hover,
+html.dark .theme-toggle:hover {
+  border-color: #ffffff;
+}
+
+/* ===== Light-mode refinement (dark mode untouched) ===== */
+html:not(.dark) .site-header {
+  background: #f7f5f0;
+  border-bottom: 1px solid #e5e0d9;
+}
+html:not(.dark) .site-nav-links a {
+  color: #192f45;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35rem;
+  transition: text-decoration-color 160ms ease;
+}
+html:not(.dark) .site-nav-links a:hover,
+html:not(.dark) .site-nav-links a:focus-visible {
+  color: #192f45;
+  text-decoration-color: #b96559;
+}
+html:not(.dark) .site-brand {
+  background: #b96559;
+  border-color: #b96559;
+  color: #fff;
+}
+html:not(.dark) .site-brand:hover {
+  border-color: #192f45;
+}
+html:not(.dark) .theme-toggle:hover {
+  border-color: #b96559;
+}
+
+html:not(.dark) .site-hero {
+  background: #f7f5f0;
+}
+html:not(.dark) #hero > div[style*="radial-gradient"] {
+  background:
+    radial-gradient(ellipse 46rem 36rem at 86% 18%, rgb(110 160 200 / 42%), transparent 74%),
+    radial-gradient(ellipse 44rem 34rem at 78% 84%, rgb(214 140 125 / 38%), transparent 74%),
+    radial-gradient(ellipse 40rem 30rem at 8% 92%, rgb(120 170 205 / 30%), transparent 74%),
+    radial-gradient(ellipse 36rem 28rem at 4% 10%, rgb(220 150 135 / 24%), transparent 74%),
+    radial-gradient(ellipse 40rem 26rem at 48% 50%, rgb(150 185 210 / 16%), transparent 76%),
+    #f7f5f0 !important;
+}
+html:not(.dark) .hero-name,
+html:not(.dark) .hero-headline {
+  color: #192f45;
+}
+html:not(.dark) .hero-name span {
+  color: #b96559 !important;
+}
+html:not(.dark) .hero-description,
+html:not(.dark) .hero-social a {
+  color: #56677a;
+}
+html:not(.dark) .hero-social a:hover {
+  color: #96443a;
+}
+
+html:not(.dark) .hero-actions a:first-child:hover {
+  background: #914239 !important;
+}
+html:not(.dark) .hero-actions a:last-child {
+  border-color: #d8d8d8;
+  background: #fff;
+  color: #192f45;
+}
+html:not(.dark) .hero-actions a:last-child:hover {
+  background: #eaf1f5;
+}
+html:not(.dark) .hero-skills span,
+html:not(.dark) .hero-skills span:nth-child(3n + 2),
+html:not(.dark) .hero-skills span:nth-child(3n) {
+  border-color: #d9dfe4;
+  background: #eef2f4;
+  color: #192f45;
+}
+html:not(.dark) .hero-skills span:nth-child(2) {
+  border-color: #e4cec8;
+  background: #f5e4df;
+}
+
+html:not(.dark) #projects { background: #f7f5f0; }
+html:not(.dark) #about { background: #f8f0ec; }
+html:not(.dark) #experience { background: #f7f5f0; }
+html:not(.dark) #education { background: #edf1f3; }
+html:not(.dark) #honors-leadership { background: #f6f0ec; }
+html:not(.dark) #contact {
+  background: #192f45;
+  color: #fff;
+}
+html:not(.dark) #contact h2 { color: #fff; }
+html:not(.dark) #contact > div > p { color: #d4e0ea; }
+html:not(.dark) #contact a.rounded-lg {
+  background: #fff;
+  color: #192f45;
+}
+html:not(.dark) #contact a.rounded-lg:hover {
+  background: #f5e4df;
+}
+
+html:not(.dark) .project-showcase-2 {
+  border-color: #a9c1d1;
+  background: #e3edf3;
+}
+html:not(.dark) .featured-project-4 {
+  border-color: #e2ddd4;
+  background: #faf8f4;
+}
+html:not(.dark) .featured-project-5 {
+  border-color: #d6d2ca;
+  background: #eae7e2;
+}
+html:not(.dark) .featured-project-5 {
+  --project-muted: #4b5d70;
+}
+
+html:not(.dark) #about .about-copy p {
+  color: #4b5d70;
+}
+html:not(.dark) #about .about-copy .about-lead {
+  border-left: 2px solid #b96559;
+  background: #f3e2dd;
+  color: #192f45;
+  box-shadow: none;
+}
+
+html:not(.dark) #experience .experience-heading h3,
+html:not(.dark) #experience .experience-heading p {
+  color: #192f45;
+}
+html:not(.dark) #experience .experience-heading time,
+html:not(.dark) #experience .experience-highlight,
+html:not(.dark) #experience .experience-more,
+html:not(.dark) #experience .experience-more li {
+  color: #4b5d70;
+}
+html:not(.dark) #experience .experience-marker {
+  border-color: #f7f5f0;
+  background: #b96559;
+  box-shadow: 0 0 0 1px #b96559;
+}
+html:not(.dark) #experience .experience-timeline::before {
+  background: #ddd7ce;
+}
+html:not(.dark) #experience .experience-card {
+  border-color: #e5e0d9;
+}
+
+html:not(.dark) #education .education-card {
+  border-color: #c5d6e2;
+  background: #fffefa;
+}
+html:not(.dark) #education .education-card:first-child {
+  border-left-color: #285b80;
+}
+html:not(.dark) #education .education-heading h3 {
+  color: #192f45;
+}
+html:not(.dark) #education .education-degree {
+  color: #192f45;
+}
+
+html:not(.dark) #honors-leadership article,
+html:not(.dark) #honors-leadership details {
+  border-color: #e5e0d9;
+  background: #fffefa;
+}
+html:not(.dark) #honors-leadership h2,
+html:not(.dark) #honors-leadership h3 {
+  color: #192f45;
+}
+
+html:not(.dark) footer.bg-gray-50 {
+  background: #f7f5f0;
+  border-top-color: #e5e0d9;
+  color: #192f45;
+}
+html:not(.dark) footer h3,
+html:not(.dark) footer nav a {
+  color: #192f45;
+}
+html:not(.dark) footer a:hover {
+  color: #b96559;
+}
+
+/* About Me: colored glows like the hero (light mode only) */
+html:not(.dark) #about {
+  background:
+    radial-gradient(ellipse 46rem 34rem at 88% 12%, rgb(214 140 125 / 30%), transparent 74%),
+    radial-gradient(ellipse 44rem 34rem at 80% 92%, rgb(110 160 200 / 28%), transparent 74%),
+    radial-gradient(ellipse 40rem 30rem at 6% 88%, rgb(214 140 125 / 22%), transparent 74%),
+    radial-gradient(ellipse 38rem 28rem at 6% 8%, rgb(120 170 205 / 20%), transparent 74%),
+    #f8f0ec;
+}
+
+/* Dark mode: glows spread across hero and About */
+html.dark #hero > div[style*="radial-gradient"] {
+  background:
+    radial-gradient(ellipse 46rem 36rem at 86% 18%, rgb(70 120 160 / 40%), transparent 74%),
+    radial-gradient(ellipse 44rem 34rem at 78% 84%, rgb(185 101 89 / 28%), transparent 74%),
+    radial-gradient(ellipse 40rem 30rem at 8% 92%, rgb(70 120 160 / 26%), transparent 74%),
+    radial-gradient(ellipse 36rem 28rem at 4% 10%, rgb(185 101 89 / 18%), transparent 74%),
+    radial-gradient(ellipse 40rem 26rem at 48% 50%, rgb(70 120 160 / 12%), transparent 76%),
+    #0a1420 !important;
+}
+
+html.dark #about {
+  background:
+    radial-gradient(ellipse 46rem 34rem at 88% 12%, rgb(185 101 89 / 24%), transparent 74%),
+    radial-gradient(ellipse 44rem 34rem at 80% 92%, rgb(70 120 160 / 30%), transparent 74%),
+    radial-gradient(ellipse 40rem 30rem at 6% 88%, rgb(185 101 89 / 18%), transparent 74%),
+    radial-gradient(ellipse 38rem 28rem at 6% 8%, rgb(70 120 160 / 22%), transparent 74%),
+    #0e1826;
+}
+
+/* Contact: glows across the navy background */
+html:not(.dark) #contact {
+  background:
+    radial-gradient(ellipse 46rem 34rem at 88% 10%, rgb(110 160 200 / 34%), transparent 74%),
+    radial-gradient(ellipse 44rem 34rem at 78% 94%, rgb(214 140 125 / 28%), transparent 74%),
+    radial-gradient(ellipse 40rem 30rem at 6% 90%, rgb(110 160 200 / 24%), transparent 74%),
+    radial-gradient(ellipse 38rem 28rem at 4% 8%, rgb(214 140 125 / 20%), transparent 74%),
+    #192f45;
+}
+html.dark #contact {
+  background:
+    radial-gradient(ellipse 46rem 34rem at 88% 10%, rgb(70 120 160 / 36%), transparent 74%),
+    radial-gradient(ellipse 44rem 34rem at 78% 94%, rgb(185 101 89 / 26%), transparent 74%),
+    radial-gradient(ellipse 40rem 30rem at 6% 90%, rgb(70 120 160 / 24%), transparent 74%),
+    radial-gradient(ellipse 38rem 28rem at 4% 8%, rgb(185 101 89 / 18%), transparent 74%),
+    #081320;
+}
