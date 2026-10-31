@@ -243,6 +243,7 @@ export const siteConfig = {
   experience: [
     {
       company: "Kestrix",
+      location: "London, UK",
       title: "Software Engineering Intern",
       dateRange: "Jun 2026 – Aug 2026",
       bullets: [
@@ -253,6 +254,7 @@ export const siteConfig = {
     },
     {
       company: "Cal Poly Noyce School of Applied Computing",
+      location: "San Luis Obispo, CA",
       title: "Software Engineer",
       dateRange: "Aug 2026 – Present",
       bullets: [
@@ -263,6 +265,7 @@ export const siteConfig = {
     },
     {
       company: "CodeBox",
+      location: "San Luis Obispo, CA",
       title: "Software Developer (Mustang Maps)",
       dateRange: "Oct 2025 – Jun 2026",
       bullets: [
@@ -274,6 +277,7 @@ export const siteConfig = {
     },
     {
       company: "Apple Next-Gen Innovators (via Cal Poly)",
+      location: "Remote",
       title: "Next-Gen Innovator",
       dateRange: "Sep 2025 – Jun 2026",
       bullets: [
@@ -283,6 +287,7 @@ export const siteConfig = {
     },
     {
       company: "Cal Poly Computer Science and Software Engineering Department",
+      location: "San Luis Obispo, CA",
       title: "Undergraduate Research Assistant",
       dateRange: "Sep 2024 – Jun 2026",
       bullets: [
@@ -293,6 +298,7 @@ export const siteConfig = {
     },
     {
       company: "Girls Who Code",
+      location: "Remote",
       title: "Teaching Assistant",
       dateRange: "May 2025 – Aug 2025",
       bullets: [
@@ -303,6 +309,7 @@ export const siteConfig = {
     },
     {
       company: "Cal Poly Noyce School of Applied Computing",
+      location: "San Luis Obispo, CA",
       title: "Student Communications Lead",
       dateRange: "Feb 2026 – Present",
       bullets: [
@@ -313,6 +320,7 @@ export const siteConfig = {
     },
     {
       company: "Cal Poly Noyce School of Applied Computing",
+      location: "San Luis Obispo, CA",
       title: "Social Media Student Assistant",
       dateRange: "Apr 2025 – Feb 2026",
       bullets: [
@@ -408,10 +416,9 @@ export const siteConfig = {
           "Selected as the sole recipient from a graduating class of 450+ students for excellence in history and social sciences.",
       },
       {
-        title: "Choir Medallion",
-        organization: "College Park High School · 2024",
-        description:
-          "Selected as the sole recipient among 24 senior choir students for excellence in singing and music theory.",
+        title: "College Park High School — Academic Recognition",
+        organization: "Top 3% of graduating class",
+        description: "Graduated in the top 3% of the class with a 4.49 GPA.",
       },
       {
         title: "California State Seal of Biliteracy — French",
@@ -421,6 +428,22 @@ export const siteConfig = {
       },
     ],
     additional: [
+      {
+        title: "Choir Medallion",
+        organization: "College Park High School · 2024",
+        description:
+          "Selected as the sole recipient among 24 senior choir students for excellence in singing and music theory.",
+      },
+      {
+        title: "AP Scholar — 2023",
+        description:
+          "Recognized by the College Board for performance on Advanced Placement examinations.",
+      },
+      {
+        title: "Girls Who Code — Early Computing Programs, 2022–2023",
+        description:
+          "Completed Summer Immersion and Self-Paced programs in programming, cybersecurity, cryptography, and data science. Developed projects using HTML, CSS, JavaScript, and Python.",
+      },
       {
         title: "Chamber Singers MVP Award — 2024",
         description:
@@ -441,23 +464,9 @@ export const siteConfig = {
           "Completed four consecutive years of choir while maintaining a 4.0 GPA in vocal music.",
       },
       {
-        title: "AP Scholar — 2023",
-        description:
-          "Recognized by the College Board for performance on Advanced Placement examinations.",
-      },
-      {
         title: "Girl Scout Bronze Award — 2017",
         description:
           "Completed a collaborative community Take Action project involving more than 20 hours of planning and service.",
-      },
-      {
-        title: "Girls Who Code — Early Computing Programs, 2022–2023",
-        description:
-          "Completed Summer Immersion and Self-Paced programs in programming, cybersecurity, cryptography, and data science. Developed projects using HTML, CSS, JavaScript, and Python.",
-      },
-      {
-        title: "College Park High School — Academic Recognition",
-        description: "Graduated in the top 3% of the class with a 4.49 GPA.",
       },
     ],
   },

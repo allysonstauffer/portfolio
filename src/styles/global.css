@@ -2138,3 +2138,11 @@ html.dark #hero > div[style*="radial-gradient"] {
     ),
     linear-gradient(125deg, #0d1826 0%, #0a1420 60%, #101a28 125%) !important;
 }
+
+#honors-leadership article p[style*="color"] {
+  color: var(--blue-text) !important;
+}
+
+.experience-resume {
+  margin: 0 0 1.75rem;
+}

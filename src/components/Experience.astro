@@ -12,6 +12,14 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
         <h2 class="section-title">Experience</h2>
       </div>
 
+      {siteConfig.resumeUrl && (
+        <div class="experience-resume">
+          <a href={siteConfig.resumeUrl} target="_blank" rel="noopener noreferrer" class="experience-resume-link">
+            View Résumé <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      )}
+
       <ol class="experience-timeline">
         {siteConfig.experience.map((experience) => {
           const [leadBullet, ...additionalBullets] = experience.bullets;
@@ -23,7 +31,7 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
                 <header class="experience-heading">
                   <div>
                     <h3>{experience.title}</h3>
-                    <p>{experience.company}</p>
+                    <p>{experience.company}{"location" in experience && ` · ${experience.location}`}</p>
                   </div>
                   <time>{experience.dateRange}</time>
                 </header>
@@ -37,14 +45,6 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
           );
         })}
       </ol>
-
-      {siteConfig.resumeUrl && (
-        <div class="experience-resume">
-          <a href={siteConfig.resumeUrl} target="_blank" rel="noopener noreferrer" class="experience-resume-link">
-            View Résumé <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-      )}
     </div>
   </section>
 )}
